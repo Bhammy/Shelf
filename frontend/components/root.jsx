@@ -5,7 +5,7 @@ import { HashRouter } from 'react-router-dom';
 const Root = ({ store }) => (
   <Provider store={ store }>
     <HashRouter>
-      <h1> ]Shelf[ </h1>
+      <h1> ]shelf[ </h1>
     </HashRouter>
   </Provider>
 );

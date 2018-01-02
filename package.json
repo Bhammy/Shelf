@@ -1,6 +1,10 @@
 {
   "name": "Shelf",
   "private": true,
+  "engines": {
+    "node": "6.7.0",
+    "npm": "3.10.7"
+  },
   "scripts": {
     "postinstall": "webpack",
     "webpack": "webpack --watch"
