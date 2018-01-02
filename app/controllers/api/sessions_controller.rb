@@ -7,7 +7,6 @@ class Api::SessionsController < ApplicationController
     )
     if @user
       login!(@user)
-      render "static_pages/root"
     else
       render json: ["Invalid credentials (username or password)"], status: 401
     end
@@ -16,8 +15,7 @@ class Api::SessionsController < ApplicationController
   def destroy
     @user = current_user
     if @user
-      logout!(@user)
-      render "static_pages/root"
+      logout!
     else
       render json: ["No active user"], status: 404
     end

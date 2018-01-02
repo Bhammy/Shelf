@@ -8,7 +8,6 @@ class Api::UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       login!(@user)
-      render "static_pages/root.html"
     else
       render json: @user.errors.full_messages, status: 422
     end
@@ -17,7 +16,6 @@ class Api::UsersController < ApplicationController
   def destroy
     @user = User.find_by(username: @user.username)
     @user.destroy!
-    render "static_pages/root.html"
   end
 
   private
