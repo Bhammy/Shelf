@@ -19,22 +19,13 @@ h1 {
   padding: 5px 30px;
 }
 
-.signup-form {
-  float: right;
-  width: 160px;
-}
-
-.signup-form button {
-  margin-left: 0;
-}
-
 nav {
   background-color: #F4F2E9;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 5px 30px;
-  border-bottom: 5px solid grey;
+  border-bottom: 2px solid lightgrey;
 }
 
 button {
@@ -49,4 +40,16 @@ button {
 button:hover{
   background-color: #5C3618;
   cursor: pointer;
+}
+
+input {
+  margin: 2px;
+  padding: 2px;
+  width: 200px;
+  border: 1px solid lightgrey;
+  border-radius: 2px;
+}
+
+input:focus {
+  outline: .5px solid #B5B7A9;
 }

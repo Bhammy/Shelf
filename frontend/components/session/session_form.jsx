@@ -23,11 +23,10 @@ class SessionForm extends React.Component {
   render() {
     return(
       <div className={`${this.props.formType}-form`} >
-        { ( this.props.formType === "login" ) ? "Login:" : "Signup:" }
         <form onSubmit={ this.handleSubmit }>
           <input type="text" value={ this.state.username } onChange={ this.handleChange("username") }/>
           <input type="password" value={ this.state.password } onChange={ this.handleChange("password") }/>
-          <button>Submit</button>
+          <button>{ ( this.props.formType === "login" ) ? "Login" : "Sign Up" }</button>
         </form>
       </div>
     );
