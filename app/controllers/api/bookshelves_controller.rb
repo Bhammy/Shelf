@@ -22,19 +22,20 @@ class Api::BookshelvesController < ApplicationController
     if @bookshelf.update(bookshelf_params)
       render :show
     else
-      render json: @bookshelf.errors.full_messages, statusL 422
+      render json: @bookshelf.errors.full_messages, status: 422
     end
   end
 
   def destroy
     @bookshelf = Bookshelf.find(params[:id])
     @bookshelf.destroy!
+    render :show
   end
 
   private
 
   def bookshelf_params
-    params.require(:bookshelf).permit(:shelf_title)
+    params.require(:bookshelf).permit(:shelf_title, :user_id)
   end
 
 end
