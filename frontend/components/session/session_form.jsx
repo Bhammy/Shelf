@@ -17,28 +17,23 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.action(this.state);
+    this.setState( { username:"", password:"" } );
   }
 
   render() {
-    let errors = null;
-
-    if ( this.props.errors.length > 0 ) {
-      errors = this.props.errors.map( (error) => {
-        return "errors go here";
-      });
-    }
-
     if (this.props.loggedIn) {
       return(
-        <button onClick={ this.props.logout } >Logout</button>
+        <div className={`${this.props.formType}-form`}>
+          Hello, { this.props.currentUser.username }!
+          <button onClick={ this.props.logout } >Logout</button>
+        </div>
       );
     } else {
       return(
-        <div className={`${this.props.formType}-form`} onSubmit={ this.handleSubmit }>
-          { errors }
-          <form>
-            <input type="text" onChange={ this.handleChange("username") }/>
-            <input type="password" onChange={ this.handleChange("password") }/>
+        <div className={`${this.props.formType}-form`} >
+          <form onSubmit={ this.handleSubmit }>
+            <input type="text" value={ this.state.username } onChange={ this.handleChange("username") }/>
+            <input type="password" value={ this.state.password } onChange={ this.handleChange("password") }/>
             <button>Submit</button>
           </form>
         </div>
