@@ -12,7 +12,7 @@ const App = () => {
     <div>
       <nav>
         <h1> ]shelf[ </h1>
-        <Route exact path="/" component={ LoginContainer } />
+        <Route path="/" component={ LoginContainer } />
       </nav>
       <section className = "main-content" >
         <Route path="/" component={ ErrorsContainer } />
