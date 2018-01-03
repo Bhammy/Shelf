@@ -1,8 +1,18 @@
 
 .signup-form {
-  width: 200px;
   margin-right: 50px;
   margin-left: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.signup-form form {
+  width: 200px;
+}
+
+.signup-form .signup-greeting {
+  font-size: 40px;
 }
 
 .signup-form button {
@@ -14,4 +24,8 @@
 
 .signup-form button:hover {
   background-color: #FFD676;
+}
+
+.login-form input {
+  width: 130px;
 }
