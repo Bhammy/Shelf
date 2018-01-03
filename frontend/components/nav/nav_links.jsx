@@ -9,10 +9,10 @@ class NavLinks extends React.Component {
 
   render () {
     return (
-      <div>
-        <Link to={`/users/${this.props.currentUser.id}`}> My Bookshelves </Link>
-        <button onClick={ this.props.logout }> Logout </button>
-      </div>
+      <ul className="nav-links">
+        <li><Link to={`/users/${this.props.currentUser.id}`}> My Bookshelves </Link></li>
+        <li><button onClick={ this.props.logout }> Logout </button></li>
+      </ul>
     );
   }
 }
