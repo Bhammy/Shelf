@@ -17,6 +17,8 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
+  after_create :create_base_bookshelves
+
   attr_reader :password
 
   has_many :bookshelves,
@@ -26,6 +28,12 @@ class User < ApplicationRecord
   has_many :books,
     through: :bookshelves,
     source: :books
+
+  def create_base_bookshelves
+    Bookshelf.create(shelf_title: "Owned Books", user_id: self.id)
+    Bookshelf.create(shelf_title: "Read Books", user_id: self.id)
+    Bookshelf.create(shelf_title: "Currently Reading", user_id: self.id)
+  end
 
   def password=(password)
     @password = password
