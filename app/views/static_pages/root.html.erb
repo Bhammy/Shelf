@@ -5,6 +5,9 @@
       user: current_user
     ).html_safe %>
   <% end %>
+  window.staticImages = {
+    splashBooks: '<%= asset_url("splash_image.jpg") %>'
+  }
 </script>
 
 <main id="root">

@@ -1,10 +1,17 @@
 
 .signup-form {
-  margin-right: 50px;
-  margin-left: auto;
+  max-width: 1400px;
+  min-width: 700px;
+  height: 350px;
+  padding: 60px;
+  margin: -40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: image_url('splash_image.jpg') no-repeat;
+  background-size: 100% auto;
+  background-position: bottom center;
+  overflow: visible;
 }
 
 .signup-form form {
@@ -13,6 +20,9 @@
 
 .signup-form .signup-greeting {
   font-size: 40px;
+  font-weight: bold;
+  color: #3B210B;
+  text-shadow: -1px 1px 6px #B5B7A9;
 }
 
 .signup-form button {
