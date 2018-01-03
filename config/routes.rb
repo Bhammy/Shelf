@@ -8,8 +8,11 @@ Rails.application.routes.draw do
     resources :users, only: [:create, :destroy, :show]
     resource :session, only: [:create, :destroy]
     resources :books, only: [:index, :show]
+    resources :bookshelves, except: [:new, :edit]
   end
 
   resources :books, only: [:show]
+  resources :bookshelves, only: [:show]
+  resources :users, only: [:show]
 
 end
