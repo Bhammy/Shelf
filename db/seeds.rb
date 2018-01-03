@@ -6,6 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.destroy_all
+Book.destroy_all
+
 User.create(username: "user1", password: "starwars")
 
 Book.create(title:"The Hitchhiker's Guide to the Galaxy", author: "Douglas Adams")
