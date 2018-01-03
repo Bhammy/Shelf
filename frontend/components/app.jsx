@@ -8,9 +8,10 @@ import { Route, Link } from 'react-router-dom';
 const App = () => {
   return (
     <div className = "all-content">
-      <h1> ]shelf[ </h1>
-      Login: <Route exact path="/" component={ LoginContainer } />
-      <br/>
+      <nav>
+        <h1> ]shelf[ </h1>
+        Login: <Route exact path="/" component={ LoginContainer } />
+      </nav>
       Signup:<Route exact path="/" component={ SignupContainer } />
     </div>
   );
