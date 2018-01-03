@@ -9,13 +9,15 @@ import { Route, Link } from 'react-router-dom';
 const App = () => {
 
   return (
-    <div className = "all-content">
+    <div>
       <nav>
         <h1> ]shelf[ </h1>
         <Route exact path="/" component={ LoginContainer } />
       </nav>
+      <section className = "main-content" >
         <Route path="/" component={ ErrorsContainer } />
-        Signup: <Route exact path="/" component={ SignupContainer } />
+        <Route exact path="/" component={ SignupContainer } />
+      </section>
     </div>
   );
 };

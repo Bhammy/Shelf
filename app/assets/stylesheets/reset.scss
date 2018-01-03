@@ -1,0 +1,32 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #F9F7F4;
+  text-decoration: none;
+  color: inherit;
+  font-family: 'PT Serif', serif;
+}
+
+body {
+  margin: auto;
+}
+
+h1 {
+  font-family: 'Roboto Mono', monospace;
+}
+
+.main-content {
+  padding: 5px 30px;
+}
+
+.signup-form {
+  float: right;
+}
+
+nav {
+  background-color: #F4F2E9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 30px;
+}

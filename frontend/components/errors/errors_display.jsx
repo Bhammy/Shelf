@@ -12,9 +12,13 @@ class ErrorsDisplay extends React.Component {
   }
 
   render() {
+    let errors = this.sessionErrors.map( (error, idx) => {
+      return (<li key={idx}>{ error }</li>);
+    });
+
     return (
       <ul>
-        { this.sessionErrors }
+        { errors }
       </ul>
     );
   }
