@@ -19,6 +19,14 @@ class User < ApplicationRecord
 
   attr_reader :password
 
+  has_many :bookshelves,
+    class_name: :Bookshelf,
+    foreign_key: :user_id
+
+  has_many :books,
+    through: :bookshelves,
+    source: :books
+
   def password=(password)
     @password = password
     self.password_digest = BCrypt::Password.create(password)

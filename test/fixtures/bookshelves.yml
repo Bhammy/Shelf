@@ -1,0 +1,20 @@
+# == Schema Information
+#
+# Table name: bookshelves
+#
+#  id          :integer          not null, primary key
+#  shelf_title :string           not null
+#  user_id     :integer          not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  shelf_title: MyString
+  user_id: 1
+
+two:
+  shelf_title: MyString
+  user_id: 1
