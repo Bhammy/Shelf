@@ -17,17 +17,19 @@ class BookModal extends React.Component {
   render () {
     return(
       <div id={`modal-${this.book.id}`} className="book-modal hidden">
-        <section className="book-modal-image">
-          <img src={ this.book.image_url } />
-        </section>
-        <section>
-          <button onClick={ this.hideModal() }>Close Window</button>
-        </section>
-        <section>
-          <h2>{ this.book.title }</h2>
-          <h4>{ this.book.author }</h4>
-          <p> { this.book.description} </p>
-        </section>
+        <content className="book-modal-content">
+          <section className="book-modal-image">
+            <img src={ this.book.image_url } />
+          </section>
+          <section>
+            <button onClick={ this.hideModal() }>Close Window</button>
+          </section>
+          <section className="book-modal-details">
+            <h2>{ this.book.title }</h2>
+            <h4>{ this.book.author }</h4>
+            <p> { this.book.description} </p>
+          </section>
+        </content>
       </div>
     );
   }

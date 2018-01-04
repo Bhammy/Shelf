@@ -5,6 +5,7 @@ class BookItemDetail extends React.Component {
   constructor(props) {
     super(props);
     this.book = props.book;
+
   }
 
   showModal () {
