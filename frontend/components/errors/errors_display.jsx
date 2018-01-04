@@ -17,7 +17,7 @@ class ErrorsDisplay extends React.Component {
     });
 
     return (
-      <ul>
+      <ul className="errors-display">
         { errors }
       </ul>
     );

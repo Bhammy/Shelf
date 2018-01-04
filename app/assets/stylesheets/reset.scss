@@ -6,6 +6,7 @@ html, body {
   color: inherit;
   font-family: 'PT Serif', serif;
   min-width: 700px;
+  max-width: 1200px;
 }
 
 body {
@@ -17,6 +18,10 @@ h1 {
   font-size: 30px;
 }
 
+li {
+  list-style: none;
+}
+
 .app-container {
   margin: auto;
 }
@@ -24,9 +29,23 @@ h1 {
 .main-content {
   padding: 0px 0px;
   width: 900px;
+  min-height: 200px;
   margin: auto;
   overflow: visible;
 }
+
+.errors-display {
+  display: flex;
+  flex-direction: column;
+}
+
+.errors-display li {
+  margin-left: auto;
+  margin-right: 30px;
+  color: red;
+}
+
+
 
 button {
   background-color: #3B210B;

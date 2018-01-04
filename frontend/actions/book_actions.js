@@ -1,5 +1,5 @@
 import * as BookAPIUtil from '../util/books_api_util';
-import { receiveErrors, RECEIVE_ERRORS } from '../session_actions';
+import { receiveErrors, RECEIVE_ERRORS } from './session_actions';
 
 export const RECEIVE_BOOK = "RECEIVE_BOOK";
 
@@ -12,11 +12,11 @@ export const receiveBook = (book) => ({
 
 export const receiveBooks = (books) => ({
   type: RECEIVE_BOOKS,
-  book
+  books
 });
 
 export const requestBook = (bookId) => (dispatch) => {
-  BooksAPIUtil.fetchBook(bookId).then( (book) => {
+  BookAPIUtil.fetchBook(bookId).then( (book) => {
     return dispatch(receiveBook(book));
   }, (errs) => {
     return dispatch(receiveErrors(errs));
@@ -24,8 +24,8 @@ export const requestBook = (bookId) => (dispatch) => {
 };
 
 export const requestBooks = () => (dispatch) => {
-  BooksAPIUtil.fetchBooks().then( (book) => {
-    return dispatch(receiveBook(book));
+  BookAPIUtil.fetchBooks().then( (books) => {
+    return dispatch(receiveBooks(books));
   }, (errs) => {
     return dispatch(receiveErrors(errs));
   });

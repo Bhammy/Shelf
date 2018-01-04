@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './components/root';
 import { configureStore } from './store/store';
-import { fetchBookshelves, fetchBookshelf, createBookshelf, updateBookshelf, deleteBookshelf } from './util/bookshelf_api_util';
+import { requestBook, requestBooks } from './actions/book_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -15,6 +15,10 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     store = configureStore();
   }
+
+  window.getState = store.getState;
+  window.requestBook = requestBook;
+  window.requestBooks = requestBooks;
 
   const root = document.getElementById("root");
 

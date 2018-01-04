@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :bookshelves, except: [:new, :edit, :index]
   end
 
-  resources :books, only: [:show]
+  resources :books, only: [:index, :show]
   resources :bookshelves, only: [:show]
   resources :users, only: [:show]
 
