@@ -1,6 +1,7 @@
 import React from 'react';
 import BookItemDetail from './book_item_detail';
 import BookModal from './book_modal';
+import { ProtectedRoute } from '../../util/route_util';
 
 class BooksIndex extends React.Component {
 
@@ -13,7 +14,7 @@ class BooksIndex extends React.Component {
   }
 
   render() {
-    let books = this.props.books.map( (book) => {
+    let bookItems = this.props.books.map( (book) => {
       return(
         <BookItemDetail book={ book } key={ book.id }/>
       );
@@ -21,7 +22,7 @@ class BooksIndex extends React.Component {
 
     let bookModals = this.props.books.map( (book) => {
       return (
-        <BookModal book={ book } key={ book.id }/>
+        <BookModal book={ book } key={ book.id } />
       );
     });
 
@@ -40,7 +41,7 @@ class BooksIndex extends React.Component {
               <th>Description</th>
               <th>Add to Shelf</th>
             </tr>
-            { books }
+            { bookItems }
           </tbody>
         </table>
       </section>
