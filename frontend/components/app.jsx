@@ -12,7 +12,7 @@ import { ProtectedRoute, AuthRoute } from '../util/route_util';
 const App = () => {
 
   return (
-    <div>
+    <div className="app-container">
       <nav>
         <h1> ]shelf[ </h1>
         <AuthRoute exact path="/" component={ LoginContainer } />

@@ -17,8 +17,15 @@ h1 {
   font-size: 30px;
 }
 
+.app-container {
+  margin: auto;
+}
+
 .main-content {
-  padding: 5px 30px;
+  padding: 0px 0px;
+  width: 900px;
+  margin: auto;
+  overflow: visible;
 }
 
 button {
