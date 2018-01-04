@@ -1,5 +1,6 @@
 import React from 'react';
 import BookItemDetail from './book_item_detail';
+import BookModal from './book_modal';
 
 class BooksIndex extends React.Component {
 
@@ -17,8 +18,17 @@ class BooksIndex extends React.Component {
         <BookItemDetail book={ book } key={ book.id }/>
       );
     });
+
+    let bookModals = this.props.books.map( (book) => {
+      return (
+        <BookModal book={ book } key={ book.id }/>
+      );
+    });
+
     return (
       <section className="books-index">
+        { bookModals }
+        <div className="modal-screen hide-modal-screen"></div>
         <table className="books-table">
           <tbody>
             <tr className="books-headers">
