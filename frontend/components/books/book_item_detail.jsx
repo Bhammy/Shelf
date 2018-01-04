@@ -11,10 +11,10 @@ class BookItemDetail extends React.Component {
 
   showActions () {
     this.showModal();
+    this.props.history.push(`/books/${this.book.id}`);
   }
 
   showModal () {
-    $(`#modal-${this.book.id}`).removeClass("hidden");
     $(".modal-screen").removeClass("hide-modal-screen");
   }
 

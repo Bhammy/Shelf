@@ -1,17 +1,21 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class BookModal extends React.Component {
 
   constructor(props) {
     super(props);
     this.book = props.book;
+    this.closeActions = this.closeActions.bind(this);
+  }
+
+  closeActions () {
+    this.hideModal();
+    this.props.history.push(`/books`);
   }
 
   hideModal () {
-    return () => {
-      $(`#modal-${this.book.id}`).addClass("hidden");
-      $(".modal-screen").addClass("hide-modal-screen");
-    };
+    $(".modal-screen").addClass("hide-modal-screen");
   }
 
   render () {
@@ -22,7 +26,7 @@ class BookModal extends React.Component {
             <img src={ this.book.image_url } />
           </section>
           <section>
-            <button onClick={ this.hideModal() }>Close Window</button>
+            <button onClick={ this.closeActions }>Close Window</button>
           </section>
           <section className="book-modal-details">
             <h2>{ this.book.title }</h2>
@@ -35,4 +39,4 @@ class BookModal extends React.Component {
   }
 }
 
-export default BookModal;
+export default withRouter(BookModal);

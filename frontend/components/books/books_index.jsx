@@ -1,7 +1,7 @@
 import React from 'react';
 import BookItemDetail from './book_item_detail';
 import BookModal from './book_modal';
-import { ProtectedRoute } from '../../util/route_util';
+import { Route } from 'react-router-dom';
 
 class BooksIndex extends React.Component {
 
@@ -22,7 +22,7 @@ class BooksIndex extends React.Component {
 
     let bookModals = this.props.books.map( (book) => {
       return (
-        <BookModal book={ book } key={ book.id } />
+        <Route path="/books/:bookId" component={() => <BookModal book={ book } key={ book.id } /> } />
       );
     });
 
