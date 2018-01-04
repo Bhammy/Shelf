@@ -1,0 +1,16 @@
+.books-table {
+  border-collapse: collapse;
+}
+
+.book-row {
+  font-size: 12px;
+}
+
+.books-headers th {
+  border-bottom: 3px solid lightgrey;
+}
+
+.book-row img {
+  max-height: 200px;
+  width: auto;
+}

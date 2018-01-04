@@ -1,4 +1,5 @@
 import React from 'react';
+import BookItemDetail from './book_item_detail';
 
 class BooksIndex extends React.Component {
 
@@ -13,18 +14,15 @@ class BooksIndex extends React.Component {
   render() {
     let books = this.props.books.map( (book) => {
       return(
-        <tr key={ book.id }>
-          <td>{ book.title }</td>
-          <td>{ book.author }</td>
-          <td>{ book.description }</td>
-        </tr>
+        <BookItemDetail book={ book } key={ book.id }/>
       );
     });
     return (
       <section className="books-index">
-        <table>
+        <table className="books-table">
           <tbody>
-            <tr>
+            <tr className="books-headers">
+              <th>Cover</th>
               <th>Title</th>
               <th>Author</th>
               <th>Description</th>
