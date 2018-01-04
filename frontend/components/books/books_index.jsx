@@ -25,7 +25,10 @@ class BooksIndex extends React.Component {
               <th>Cover</th>
               <th>Title</th>
               <th>Author</th>
+              <th>Avg Rating</th>
+              <th>User Rating</th>
               <th>Description</th>
+              <th>Add to Shelf</th>
             </tr>
             { books }
           </tbody>

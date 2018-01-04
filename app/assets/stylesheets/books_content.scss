@@ -1,16 +1,33 @@
 .books-table {
   border-collapse: collapse;
+  border-spacing: 5px;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.books-table td {
+  padding: 10px;
 }
 
 .book-row {
   font-size: 12px;
+  border-bottom: 1px solid lightgrey;
 }
 
 .books-headers th {
   border-bottom: 3px solid lightgrey;
+  font-size: 14px;
 }
 
 .book-row img {
-  max-height: 200px;
+  max-height: 150px;
   width: auto;
+  transition: transform 1.5s, box-shadow 1s;
+  transition-timing-function: ease-out;
+}
+
+.books-table img:hover {
+  box-shadow: 3px 3px 3px lightgrey;
+  transform: scale(1.1, 1.1);
+  cursor: pointer;
 }

@@ -13,7 +13,10 @@ class BookItemDetail extends React.Component {
         <td><img src={ this.book.image_url } /></td>
         <td>{ this.book.title }</td>
         <td>{ this.book.author }</td>
+        <td> Avg Rating </td>
+        <td> User Rating </td>
         <td>{ this.book.description.slice(0, 100)+"..." }</td>
+        <td> Shelf Add </td>
       </tr>
     );
   }
