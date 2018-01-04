@@ -22,14 +22,14 @@ class BooksIndex extends React.Component {
 
     let bookModals = this.props.books.map( (book) => {
       return (
-        <Route path="/books/:bookId" component={() => <BookModal book={ book } key={ book.id } /> } />
+        <Route path="/books/:bookId" key={ book.id } component={() => <BookModal book={ book } /> } />
       );
     });
 
     return (
       <section className="books-index">
         { bookModals }
-        <div className="modal-screen hide-modal-screen"></div>
+        <Route path="/books/:bookId" render={ () => <div className="modal-screen"></div>} />
         <table className="books-table">
           <tbody>
             <tr className="books-headers">

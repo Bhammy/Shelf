@@ -42,14 +42,6 @@
   background: rgba(0, 0, 0, 0.3);
 }
 
-.hide-modal-screen {
-  display: none;
-}
-
-// div.hidden {
-//   display: none;
-// }
-
 div [id^='modal-'] {
   z-index: 1000;
   position: absolute;

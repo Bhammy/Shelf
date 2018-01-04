@@ -10,12 +10,7 @@ class BookModal extends React.Component {
   }
 
   closeActions () {
-    this.hideModal();
     this.props.history.push(`/books`);
-  }
-
-  hideModal () {
-    $(".modal-screen").addClass("hide-modal-screen");
   }
 
   render () {
