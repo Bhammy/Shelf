@@ -1,5 +1,5 @@
 import * as BookshelfAPIUtil from '../util/bookshelf_api_util';
-import { receiveErrors, RECEIVE_ERRORS } from '../session_actions';
+import { receiveErrors, RECEIVE_ERRORS } from './session_actions';
 
 export const RECEIVE_BOOKSHELF = "RECEIVE_BOOKSHELF";
 
@@ -22,8 +22,8 @@ export const removeBookshelf = (bookshelf) => ({
   bookshelfId: bookshelf.id
 });
 
-export const requestBookshelves = () => (dispatch) => {
-  return BookshelfAPIUtil.fetchBookshelves().then( (shelves) => {
+export const requestBookshelves = (userId) => (dispatch) => {
+  BookshelfAPIUtil.fetchBookshelves(userId).then( (shelves) => {
     return dispatch(receiveBookshelves(shelves));
   }, (errs) => {
     return dispatch(receiveErrors(errs));
@@ -31,7 +31,7 @@ export const requestBookshelves = () => (dispatch) => {
 };
 
 export const requestBookshelf = (shelfId) => (dispatch) => {
-  return BookshelfAPIUtil.fetchBookshelf(shelfId).then( (shelf) => {
+  BookshelfAPIUtil.fetchBookshelf(shelfId).then( (shelf) => {
     return dispatch(receiveBookshelf(shelf));
   }, (errs) => {
     return dispatch(receiveErrors(errs));
@@ -39,7 +39,7 @@ export const requestBookshelf = (shelfId) => (dispatch) => {
 };
 
 export const createBookshelf = (shelf) => (dispatch) => {
-  return BookshelfAPIUtil.createBookshelf(shelf).then( (shelf) => {
+  BookshelfAPIUtil.createBookshelf(shelf).then( (shelf) => {
     return dispatch(receiveBookshelf(shelf));
   }, (errs) => {
     return dispatch(receiveErrors(errs));
@@ -47,7 +47,7 @@ export const createBookshelf = (shelf) => (dispatch) => {
 };
 
 export const updateBookshelf = (shelf) => (dispatch) => {
-  return BookshelfAPIUtil.updateBookshelf(shelf).then( (shelf) => {
+  BookshelfAPIUtil.updateBookshelf(shelf).then( (shelf) => {
     return dispatch(receiveBookshelf(shelf));
   }, (errs) => {
     return dispatch(receiveErrors(errs));
@@ -55,7 +55,7 @@ export const updateBookshelf = (shelf) => (dispatch) => {
 };
 
 export const deleteBookshelf = (shelfId) => (dispatch) => {
-  return BookshelfAPIUtil.deleteBookshelf(shelfId).then( (shelf) => {
+  BookshelfAPIUtil.deleteBookshelf(shelfId).then( (shelf) => {
     return dispatch(removeBookshelf(shelf));
   }, (errs) => {
     return dispatch(receiveErrors(errs));

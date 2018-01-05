@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './components/root';
 import { configureStore } from './store/store';
-import { requestBook, requestBooks } from './actions/book_actions';
+import { requestBookshelves, requestBookshelf } from './actions/bookshelf_actions';
+import { requestBook } from './actions/book_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -17,8 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   window.getState = store.getState;
-  window.requestBook = requestBook;
-  window.requestBooks = requestBooks;
 
   const root = document.getElementById("root");
 
