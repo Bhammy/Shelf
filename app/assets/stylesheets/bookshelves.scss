@@ -8,7 +8,7 @@
 
 .bookshelf-form {
   display: block;
-  width: 100%;
+  width: 80%;
 }
 
 .bookshelf-index {
@@ -22,4 +22,22 @@
 .bookshelf-display {
   margin-left: 40px;
   width: 88%;
+}
+.bookshelf-nav {
+  width: 100%;
+  display: block;
+  margin: 10px 0px;
+}
+.bookshelf-nav-buttons a {
+  text-decoration: none;
+  background-color: #3B210B;
+  color: #F9F7F4;
+  margin: 3px;
+  padding: 8px 12px;
+  font-size: 12px;
+  border-radius: 4px;
+  a:hover {
+    background-color: #5C3618;
+    cursor: pointer;
+  }
 }

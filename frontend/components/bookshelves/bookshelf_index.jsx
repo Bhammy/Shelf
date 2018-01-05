@@ -18,8 +18,12 @@ class BookshelfIndex extends React.Component {
   render() {
     return(
       <content className="bookshelf-container">
-        <section>
-          <Route path="/users/:userId/bookshelves/:id?" component={ BookshelfNav } />
+        <section className="bookshelf-nav">
+          <Route exact path="/users/:userId/bookshelves/:id?" component={ BookshelfNav } />
+          <Switch>
+            <Route exact path="/users/:userId/bookshelves/:id/edit" component={ BookshelfFormContainer } />
+            <Route exact path="/users/:userId/bookshelves/new" component={ BookshelfFormContainer } />
+          </Switch>
         </section>
         <section className="bookshelf-index">
           <ul className="bookshelf-list">
@@ -27,9 +31,7 @@ class BookshelfIndex extends React.Component {
           </ul>
         </section>
         <section className="bookshelf-display">
-          <Route exact path="/users/:userId/bookshelves/:id" component={ BookshelfContainer } />
-          <Route exact path="/users/:userId/bookshelves/new" component={ BookshelfFormContainer } /> 
-          <Route exact path="/users/:userId/bookshelves/:id/edit" component={ BookshelfFormContainer } />
+            <Route path="/users/:userId/bookshelves/:id" component={ BookshelfContainer } />
         </section>
       </content>
     );

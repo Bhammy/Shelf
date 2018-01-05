@@ -8,15 +8,19 @@ class BookshelfNav extends React.Component {
 
   render() {
     if (this.props.match.params.id) {
-      return (
-        <div>
-          <Link to={`/users/${this.props.match.params.userId}/bookshelves/new`}>Create New Bookshelf</Link>
-          <Link to={`/users/${this.props.match.params.userId}/bookshelves/${this.props.match.params.id}/edit`}>Edit Bookshelf</Link>
-        </div>
-      );
+      if (this.props.match.params.id === "new") {
+        return (null);
+      } else {
+        return (
+          <div className="bookshelf-nav-buttons">
+            <Link to={`/users/${this.props.match.params.userId}/bookshelves/new`}>Create New Bookshelf</Link>
+            <Link to={`/users/${this.props.match.params.userId}/bookshelves/${this.props.match.params.id}/edit`}>Edit Bookshelf</Link>
+          </div>
+        );
+      }
     } else {
       return (
-        <div>
+        <div className="bookshelf-nav-buttons">
           <Link to={`/users/${this.props.match.params.userId}/bookshelves/new`}>Create New Bookshelf</Link>
         </div>
       );

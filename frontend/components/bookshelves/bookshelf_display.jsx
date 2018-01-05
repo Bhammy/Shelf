@@ -8,7 +8,9 @@ class BookshelfDisplay extends React.Component {
   }
 
   componentDidMount() {
-    this.props.requestBookshelf(this.props.match.params.id);
+    if (this.props.match.params.id !== "new") {
+      this.props.requestBookshelf(this.props.match.params.id);
+    }
   }
 
   render () {

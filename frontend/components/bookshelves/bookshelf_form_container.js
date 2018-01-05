@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
-import { createBookshelf, updateBookshelf, deleteBookshelf } from '../../actions/bookshelf_actions';
+import { requestBookshelf, createBookshelf, updateBookshelf, deleteBookshelf } from '../../actions/bookshelf_actions';
 import BookshelfForm from './bookshelf_form';
 
 const mapStateToProps = (state, ownProps) => {
-  if (ownProps.match.params.id) {
+  if (ownProps.match.params.id !== "new") {
     return {
       bookshelf: state.entities.bookshelves[ownProps.match.params.id],
     };
