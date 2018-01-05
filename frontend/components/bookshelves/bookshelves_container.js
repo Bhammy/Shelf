@@ -5,6 +5,7 @@ import BookshelfIndex from './bookshelf_index';
 const mapStateToProps = (state, ownProps) => ({
   bookshelves: Object.values(state.entities.bookshelves),
   currentUser: state.session.currentUser,
+  currentBookshelfId: state.ui.currentBookshelf,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

@@ -2,6 +2,7 @@ import React from 'react';
 import BookshelfListItem from './bookshelf_list_item';
 import BookshelfContainer from './bookshelf_container';
 import BookshelfFormContainer from './bookshelf_form_container';
+import BookshelfTitleContainer from './bookshelf_title_container';
 import BookshelfNav from './bookshelf_nav';
 import { Route, Switch } from 'react-router-dom';
 
@@ -19,7 +20,7 @@ class BookshelfIndex extends React.Component {
 
     return(
       <content className="bookshelf-container">
-        <h2>  </h2>
+          <Route exact path="/users/:userId/bookshelves/:id?" component={ BookshelfTitleContainer } />
         <section className="bookshelf-nav">
           <Route exact path="/users/:userId/bookshelves/:id?" component={ BookshelfNav } />
           <Switch>
