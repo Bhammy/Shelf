@@ -44,10 +44,12 @@
 
 div [id^='modal-'] {
   z-index: 1000;
-  position: absolute;
+  position: fixed;
   background-color: #F9F7F4;
-  width: 60%;
-  height: 90%;
+  width: 75%;
+  left: 50%;
+  margin-left: -40%;
+  height: 80vw;
   padding: 30px;
   border: 1px solid lightgrey;
   border-radius: 4px;
