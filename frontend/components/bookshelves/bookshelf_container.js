@@ -5,6 +5,7 @@ import { selectBookshelfBooks } from '../../reducers/selectors';
 
 const mapStateToProps = (state, ownProps) => ({
   bookshelf: state.entities.bookshelves[ownProps.match.params.id],
+  bookshelves: Object.values(state.entities.bookshelves),
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

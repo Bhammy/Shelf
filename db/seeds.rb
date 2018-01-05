@@ -18,7 +18,7 @@
 # Book.create(title:"1491: New Revelations of the Americas Before Columbus", cover_image: "https://s3.us-east-2.amazonaws.com/shelf-imgs/1491.jpg", author: "Charles C. Mann", description: "A groundbreaking study that radically alters our understanding of the Americas before the arrival of the Europeans in 1492.
 # ")
 # Book.create(title:"Persepolis: The Story of a Childhood", author: "Marjane Satrapi", cover_image: "https://s3.us-east-2.amazonaws.com/shelf-imgs/persepolis.jpg", description: "Wise, funny, and heartbreaking, Persepolis is Marjane Satrapi’s memoir of growing up in Iran during the Islamic Revolution.")
-#
+
 # Book.create(title:"Foundation", author: "Isaac Asimov", cover_image: "https://s3.us-east-2.amazonaws.com/shelf-imgs/foundation.jpg", description: "For twelve thousand years the Galactic Empire has ruled supreme. Now it is dying. But only Hari Seldon, creator of the revolutionary science of psychohistory, can see into the future -- to a dark age of ignorance, barbarism, and warfare that will last thirty thousand years. To preserve knowledge and save mankind, Seldon gathers the best minds in the Empire -- both scientists and scholars -- and brings them to a bleak planet at the edge of the Galaxy to serve as a beacon of hope for a future generations. He calls his sanctuary the Foundation.
 # ")
 #

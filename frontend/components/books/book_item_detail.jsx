@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import BookshelfAddItemContainer from '../bookshelves/bookshelf_add_item_container';
 
 class BookItemDetail extends React.Component {
 
@@ -27,7 +28,7 @@ class BookItemDetail extends React.Component {
         <td> Avg Rating </td>
         <td> User Rating </td>
         <td>{ this.book.description.slice(0, 80)+"..." }</td>
-        <td> Shelf Add </td>
+        <td> <BookshelfAddItemContainer bookshelves={ this.props.bookshelves } /> </td>
       </tr>
     );
   }

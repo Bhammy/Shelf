@@ -19,7 +19,7 @@ class BookshelfDisplay extends React.Component {
     if (this.props.bookshelf) {
         bookItems = this.props.bookshelf.books.map( (book) => {
         return (
-          <BookItemDetail book={ book} key = { book.id }/>
+          <BookItemDetail book={ book} key = { book.id } bookshelves={ this.props.bookshelves }/>
         );
       });
     } else {

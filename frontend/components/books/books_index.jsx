@@ -11,12 +11,13 @@ class BooksIndex extends React.Component {
 
   componentDidMount() {
     this.props.requestBooks();
+    this.props.requestBookshelves(this.props.currentUser.id);
   }
 
   render() {
     let bookItems = this.props.books.map( (book) => {
       return(
-        <BookItemDetail book={ book } key={ book.id }/>
+        <BookItemDetail book={ book } key={ book.id } bookshelves={ this.props.bookshelves }/>
       );
     });
 
