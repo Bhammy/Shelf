@@ -25,3 +25,15 @@
 # 50.times do
 #   Book.create(title: Faker::Book.title, author: Faker::Book.author, description: Faker::Dune.quote)
 # end
+#
+# ShelfMembership.create(shelf_id: 1, book_id: 1)
+# ShelfMembership.create(shelf_id: 1, book_id: 2)
+# ShelfMembership.create(shelf_id: 1, book_id: 3)
+# ShelfMembership.create(shelf_id: 1, book_id: 4)
+# ShelfMembership.create(shelf_id: 2, book_id: 5)
+# ShelfMembership.create(shelf_id: 2, book_id: 6)
+# ShelfMembership.create(shelf_id: 2, book_id: 7)
+# ShelfMembership.create(shelf_id: 3, book_id: 9)
+# ShelfMembership.create(shelf_id: 2, book_id: 8)
+# ShelfMembership.create(shelf_id: 1, book_id: 10)
+# ShelfMembership.create(shelf_id: 1, book_id: 11)

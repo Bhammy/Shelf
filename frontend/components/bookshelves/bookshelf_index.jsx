@@ -22,7 +22,7 @@ class BookshelfIndex extends React.Component {
       <content className="bookshelf-container">
           <Route exact path="/users/:userId/bookshelves/:id?" component={ BookshelfTitleContainer } />
         <section className="bookshelf-nav">
-          <Route exact path="/users/:userId/bookshelves/:id?" component={ BookshelfNav } />
+          <Route exact path="/users/:userId/bookshelves/:id?" component={ () => <BookshelfNav deleteBookshelf={ this.props.deleteBookshelf }/>} />
           <Switch>
             <Route exact path="/users/:userId/bookshelves/:id/edit" component={ BookshelfFormContainer } />
             <Route exact path="/users/:userId/bookshelves/new" component={ BookshelfFormContainer } />

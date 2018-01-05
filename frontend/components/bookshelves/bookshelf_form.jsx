@@ -7,6 +7,7 @@ class BookshelfForm extends React.Component {
     super(props);
     this.state = Object.assign({}, this.props.bookshelf);
     this.submitShelf = this.submitShelf.bind(this);
+    this.deleteShelf = this.deleteShelf.bind(this);
   }
 
   handleChange(e) {
@@ -17,7 +18,6 @@ class BookshelfForm extends React.Component {
     e.preventDefault();
     if (this.props.formType === "create") {
       this.props.createBookshelf(this.state).then( (success) => {
-        debugger
         this.props.history.push(`/users/${success.user_id}/bookshelves/${success.id}`);
       });
     } else {
@@ -25,14 +25,28 @@ class BookshelfForm extends React.Component {
     }
   }
 
+  deleteShelf(e) {
+    e.preventDefault();
+    this.props.deleteBookshelf(this.props.match.params.id).then( (success) => {
+      this.props.history.push(`/users/${success.user_id}/bookshelves/`);
+    });
+  }
+
   render () {
+    let deleteButton = null;
+
+    if (this.props.formType === "edit") {
+      deleteButton = (<button onClick={ this.deleteShelf }>Delete Shelf</button>);
+    }
+
     return (
-      <div className="bookshelf-form" onSubmit={ this.submitShelf }>
+      <div className="bookshelf-form">
         <form>
           <label> Shelf Title
             <input type="text" value={ this.state.shelf_title } onChange={ this.handleChange() } />
           </label>
-          <button>Submit</button>
+          <button onClick={ this.submitShelf }>Submit</button>
+          { deleteButton }
         </form>
       </div>
     );
