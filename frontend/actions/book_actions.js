@@ -16,7 +16,7 @@ export const receiveBooks = (books) => ({
 });
 
 export const requestBook = (bookId) => (dispatch) => {
-  BookAPIUtil.fetchBook(bookId).then( (book) => {
+  return BookAPIUtil.fetchBook(bookId).then( (book) => {
     return dispatch(receiveBook(book));
   }, (errs) => {
     return dispatch(receiveErrors(errs));
@@ -24,7 +24,7 @@ export const requestBook = (bookId) => (dispatch) => {
 };
 
 export const requestBooks = () => (dispatch) => {
-  BookAPIUtil.fetchBooks().then( (books) => {
+  return BookAPIUtil.fetchBooks().then( (books) => {
     return dispatch(receiveBooks(books));
   }, (errs) => {
     return dispatch(receiveErrors(errs));

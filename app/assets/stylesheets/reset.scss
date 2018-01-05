@@ -26,6 +26,16 @@ ul {
   padding-left: 0;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .app-container {
   margin: auto;
 }

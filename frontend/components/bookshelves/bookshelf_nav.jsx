@@ -14,7 +14,7 @@ class BookshelfNav extends React.Component {
         return (
           <div className="bookshelf-nav-buttons">
             <Link to={`/users/${this.props.match.params.userId}/bookshelves/new`}>Create New Bookshelf</Link>
-            <Link to={`/users/${this.props.match.params.userId}/bookshelves/${this.props.match.params.id}/edit`}>Edit Bookshelf</Link>
+            <Link to={`/users/${this.props.match.params.userId}/bookshelves/${this.props.match.params.id}/edit`}>Edit This Bookshelf</Link>
           </div>
         );
       }

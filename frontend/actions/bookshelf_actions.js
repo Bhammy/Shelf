@@ -23,7 +23,7 @@ export const removeBookshelf = (bookshelf) => ({
 });
 
 export const requestBookshelves = (userId) => (dispatch) => {
-  BookshelfAPIUtil.fetchBookshelves(userId).then( (shelves) => {
+  return BookshelfAPIUtil.fetchBookshelves(userId).then( (shelves) => {
     return dispatch(receiveBookshelves(shelves));
   }, (errs) => {
     return dispatch(receiveErrors(errs));
@@ -31,7 +31,7 @@ export const requestBookshelves = (userId) => (dispatch) => {
 };
 
 export const requestBookshelf = (shelfId) => (dispatch) => {
-  BookshelfAPIUtil.fetchBookshelf(shelfId).then( (shelf) => {
+  return BookshelfAPIUtil.fetchBookshelf(shelfId).then( (shelf) => {
     return dispatch(receiveBookshelf(shelf));
   }, (errs) => {
     return dispatch(receiveErrors(errs));
@@ -39,24 +39,27 @@ export const requestBookshelf = (shelfId) => (dispatch) => {
 };
 
 export const createBookshelf = (shelf) => (dispatch) => {
-  BookshelfAPIUtil.createBookshelf(shelf).then( (shelf) => {
-    return dispatch(receiveBookshelf(shelf));
+  return BookshelfAPIUtil.createBookshelf(shelf).then( (shelf) => {
+    dispatch(receiveBookshelf(shelf));
+    return shelf;
   }, (errs) => {
     return dispatch(receiveErrors(errs));
   });
 };
 
 export const updateBookshelf = (shelf) => (dispatch) => {
-  BookshelfAPIUtil.updateBookshelf(shelf).then( (shelf) => {
-    return dispatch(receiveBookshelf(shelf));
+  return BookshelfAPIUtil.updateBookshelf(shelf).then( (shelf) => {
+    dispatch(receiveBookshelf(shelf));
+    return shelf;
   }, (errs) => {
     return dispatch(receiveErrors(errs));
   });
 };
 
 export const deleteBookshelf = (shelfId) => (dispatch) => {
-  BookshelfAPIUtil.deleteBookshelf(shelfId).then( (shelf) => {
-    return dispatch(removeBookshelf(shelf));
+  return BookshelfAPIUtil.deleteBookshelf(shelfId).then( (shelf) => {
+    dispatch(removeBookshelf(shelf));
+    return shelf;
   }, (errs) => {
     return dispatch(receiveErrors(errs));
   });
