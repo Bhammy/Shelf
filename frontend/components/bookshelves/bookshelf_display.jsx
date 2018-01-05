@@ -1,4 +1,5 @@
 import React from 'react';
+import BookItemDetail from '../books/book_item_detail';
 
 class BookshelfDisplay extends React.Component {
 
@@ -15,7 +16,9 @@ class BookshelfDisplay extends React.Component {
 
     if (this.props.bookshelf) {
         bookItems = this.props.bookshelf.books.map( (book) => {
-        return (<li>{ book.title }</li>);
+        return (
+          <BookItemDetail book={ book} key = { book.id }/>
+        );
       });
     } else {
       bookItems = null;

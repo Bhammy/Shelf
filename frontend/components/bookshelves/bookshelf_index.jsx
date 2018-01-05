@@ -1,7 +1,9 @@
 import React from 'react';
 import BookshelfListItem from './bookshelf_list_item';
 import BookshelfContainer from './bookshelf_container';
-import { Route } from 'react-router-dom';
+import BookshelfFormContainer from './bookshelf_form_container';
+import BookshelfNav from './bookshelf_nav';
+import { Route, Switch } from 'react-router-dom';
 
 class BookshelfIndex extends React.Component {
 
@@ -14,16 +16,20 @@ class BookshelfIndex extends React.Component {
   }
 
   render() {
-
     return(
       <content className="bookshelf-container">
+        <section>
+          <Route path="/users/:userId/bookshelves/:id?" component={ BookshelfNav } />
+        </section>
         <section className="bookshelf-index">
           <ul className="bookshelf-list">
             { this.props.bookshelves.map( (bookshelf) => (<BookshelfListItem bookshelf={ bookshelf } userId= {this.props.currentUser.id} key={ bookshelf.id} />) )}
           </ul>
         </section>
         <section className="bookshelf-display">
-          <Route path="/users/:userId/bookshelves/:id" component={ BookshelfContainer } />
+          <Route exact path="/users/:userId/bookshelves/:id" component={ BookshelfContainer } />
+          <Route exact path="/users/:userId/bookshelves/new" component={ BookshelfFormContainer } /> 
+          <Route exact path="/users/:userId/bookshelves/:id/edit" component={ BookshelfFormContainer } />
         </section>
       </content>
     );
