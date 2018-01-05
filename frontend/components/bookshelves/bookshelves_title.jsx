@@ -9,6 +9,10 @@ class BookshelfTitle extends React.Component {
   render() {
     let shelfTitle = "My Shelves";
 
+    if (this.props.currentShelf) {
+      shelfTitle = this.props.currentShelf.shelf_title;
+    }
+
     return(
       <h3> { shelfTitle } </h3>
     );

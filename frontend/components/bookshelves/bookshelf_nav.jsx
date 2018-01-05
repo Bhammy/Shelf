@@ -13,15 +13,15 @@ class BookshelfNav extends React.Component {
       } else {
         return (
           <div className="bookshelf-nav-buttons">
-            <Link to={`/users/${this.props.match.params.userId}/bookshelves/new`}>Create New Bookshelf</Link>
-            <Link to={`/users/${this.props.match.params.userId}/bookshelves/${this.props.match.params.id}/edit`}>Edit This Bookshelf</Link>
+            <Link to={`/users/${this.props.match.params.userId}/bookshelves/new`}>Create New Shelf</Link>
+            <Link to={`/users/${this.props.match.params.userId}/bookshelves/${this.props.match.params.id}/edit`}>Edit This Shelf</Link>
           </div>
         );
       }
     } else {
       return (
         <div className="bookshelf-nav-buttons">
-          <Link to={`/users/${this.props.match.params.userId}/bookshelves/new`}>Create New Bookshelf</Link>
+          <Link to={`/users/${this.props.match.params.userId}/bookshelves/new`}>Create New Shelf</Link>
         </div>
       );
     }
