@@ -38,10 +38,13 @@
   padding: 8px 12px;
   font-size: 12px;
   border-radius: 4px;
-  a:hover {
-    background-color: #5C3618;
-    cursor: pointer;
-  }
+}
+
+.bookshelf-nav-buttons a:hover {
+  background-color: #5C3618;
+  color: #F9F7F4;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .bookshelf-title {
