@@ -1,24 +1,33 @@
 import React from 'react';
+import BookshelfCheckbox from './bookshelf_checkbox';
 
 class BookshelfAddItemDropdown extends React.Component {
 
   constructor(props) {
     super(props);
+    this.bookOnBookshelf = this.bookOnBookshelf.bind(this);
+    this.createMappedCheckboxes = this.createMappedCheckboxes.bind(this);
+  }
+
+  bookOnBookshelf(bookshelf) {
+    bookshelf.books.some( (book) => book.id === this.props.bookId );
+  }
+
+  createMappedCheckboxes(bookshelves) {
+    return bookshelves.map( (bookshelf, idx) =>
+    <BookshelfCheckbox bookshelf={ bookshelf }
+      bookId={ this.props.bookId }
+      key={ idx }
+      addBookToShelf={ this.props.addBookToShelf }
+      removeBookFromShelf={ this.props.removeBookFromShelf }
+    />);
   }
 
   render() {
-    let shelfTitles = null;
-
-    if (this.props.bookshelves) {
-      shelfTitles = this.props.bookshelves.map( (bookshelf) => {
-        return (<li>{ bookshelf.shelf_title }</li>);
-      });
-    }
-
     return (
       <div>
         <ul>
-          { shelfTitles }
+          { this.createMappedCheckboxes(this.props.bookshelves) }
         </ul>
       </div>
     );

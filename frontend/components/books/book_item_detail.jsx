@@ -28,7 +28,7 @@ class BookItemDetail extends React.Component {
         <td> Avg Rating </td>
         <td> User Rating </td>
         <td>{ this.book.description.slice(0, 80)+"..." }</td>
-        <td> <BookshelfAddItemContainer bookshelves={ this.props.bookshelves } /> </td>
+        <td> <BookshelfAddItemContainer bookshelves={ this.props.bookshelves } bookId={ this.book.id }/> </td>
       </tr>
     );
   }

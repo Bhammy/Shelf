@@ -11,7 +11,7 @@ const uiReducer = (state=initialState, action) => {
   let newState;
   switch (action.type) {
     case RECEIVE_BOOKSHELF:
-      newState = merge({}, state, { currentBookshelf: action.bookshelf.id });
+      newState = merge({}, state, { currentBookshelf: action.bookshelf });
       return newState;
     case REMOVE_BOOKSHELF:
       newState = merge({}, state, { currentBookshelf: null});
