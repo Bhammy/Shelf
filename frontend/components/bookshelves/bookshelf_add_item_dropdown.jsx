@@ -7,6 +7,8 @@ class BookshelfAddItemDropdown extends React.Component {
     super(props);
     this.bookOnBookshelf = this.bookOnBookshelf.bind(this);
     this.createMappedCheckboxes = this.createMappedCheckboxes.bind(this);
+    this.toggleDropdown = this.toggleDropdown.bind(this);
+    this.state = { dropdownShown: false };
   }
 
   bookOnBookshelf(bookshelf) {
@@ -23,12 +25,27 @@ class BookshelfAddItemDropdown extends React.Component {
     />);
   }
 
+  toggleDropdown(e) {
+    e.preventDefault();
+    this.setState({ dropdownShown: !this.state.dropdownShown });
+    if (this.state.dropdownShown) {
+      $(`.checkbox-container-dropdown-${this.props.bookId}`).addClass("checkbox-hidden");
+    } else {
+      $(`.checkbox-container-dropdown-${this.props.bookId}`).removeClass("checkbox-hidden");
+    }
+  }
+
   render() {
     return (
-      <div>
-        <ul>
-          { this.createMappedCheckboxes(this.props.bookshelves) }
-        </ul>
+      <div className="checkbox-container">
+        <span className="checkbox-dropdown-clicker">
+          Add Book to Shelf <button onClick={ this.toggleDropdown }>▾</button>
+        </span>
+        <div className={`checkbox-container-dropdown-${this.props.bookId} checkbox-hidden`}>
+          <ul className="checkbox-container-list">
+            { this.createMappedCheckboxes(this.props.bookshelves) }
+          </ul>
+        </div>
       </div>
     );
   }

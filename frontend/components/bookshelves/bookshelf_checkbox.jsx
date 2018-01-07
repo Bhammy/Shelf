@@ -21,7 +21,7 @@ class BookshelfCheckbox extends React.Component {
 
   render() {
     return (
-      <label>
+      <label className="checkbox-item">
         <input type="checkbox" value={`${this.props.bookshelf.shelf_title}`} checked={ this.state.isChecked } onChange={ this.toggleCheck } />
         { this.props.bookshelf.shelf_title }
       </label>
