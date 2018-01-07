@@ -22,6 +22,8 @@ class Book < ApplicationRecord
 
   has_many :shelf_memberships
 
+  has_many :reviews
+
   has_many :shelves,
     through: :shelf_memberships,
     source: :shelf

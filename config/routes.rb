@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :books, only: [:index, :show] do
       resource :shelf_membership, only: [:create, :destroy]
+      resource :reviews, only: [:create, :update, :destroy]
     end
     resources :bookshelves, except: [:new, :edit, :index]
   end
