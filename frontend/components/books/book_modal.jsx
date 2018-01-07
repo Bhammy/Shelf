@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import BookshelfAddItemContainer from '../bookshelves/bookshelf_add_item_container';
 
 class BookModal extends React.Component {
 
@@ -20,15 +21,21 @@ class BookModal extends React.Component {
           <section className="book-modal-image">
             <img src={ this.book.image_url } />
           </section>
+          <section className="book-modal-details">
+            <BookshelfAddItemContainer bookshelves={ this.props.bookshelves } bookId={ this.book.id }/>
+            <h2>{ this.book.title }</h2>
+            <h4><i>{ this.book.author }</i></h4>
+            <p> { this.book.description} </p>
+          </section>
           <section>
             <button onClick={ this.closeActions }>Close Window</button>
           </section>
-          <section className="book-modal-details">
-            <h2>{ this.book.title }</h2>
-            <h4>{ this.book.author }</h4>
-            <p> { this.book.description} </p>
-          </section>
         </content>
+        <section className="book-modal-reviews">
+          <h3>User Reviews</h3>
+          <hr />
+          This section reserved for reviews
+        </section>
       </div>
     );
   }

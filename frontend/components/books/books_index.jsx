@@ -1,6 +1,6 @@
 import React from 'react';
 import BookItemDetail from './book_item_detail';
-import BookModal from './book_modal';
+import BookModalContainer from './book_modal_container';
 import { Route } from 'react-router-dom';
 
 class BooksIndex extends React.Component {
@@ -23,7 +23,7 @@ class BooksIndex extends React.Component {
 
     let bookModals = this.props.books.map( (book) => {
       return (
-        <Route path={`/books/${book.id}`} key={ book.id } component={() => <BookModal book={ book } /> } />
+        <Route path={`/books/${book.id}`} key={ book.id } component={() => <BookModalContainer book={ book } /> } />
       );
     });
 
