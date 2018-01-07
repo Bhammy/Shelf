@@ -108,10 +108,11 @@ div [id^='modal-'] {
 
 div [class^='checkbox-container-dropdown-']{
   z-index: 998;
-  float: right;
+  // float: right;
   top: 30%;
-  right: 2.5%;
+  left: 0%;
   width: 130%;
+  max-width: 200px;
   background-color: #F9F7F4;
   position: absolute;
   padding: 0px 10px;
