@@ -29,9 +29,11 @@ class BookshelfAddItemDropdown extends React.Component {
     e.preventDefault();
     this.setState({ dropdownShown: !this.state.dropdownShown });
     if (this.state.dropdownShown) {
+      $(`.checkbox-container-dropdown-${this.props.bookId}`).removeClass("checkbox-reveal");
       $(`.checkbox-container-dropdown-${this.props.bookId}`).addClass("checkbox-hidden");
     } else {
       $(`.checkbox-container-dropdown-${this.props.bookId}`).removeClass("checkbox-hidden");
+      $(`.checkbox-container-dropdown-${this.props.bookId}`).addClass("checkbox-reveal");
     }
   }
 

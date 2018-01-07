@@ -68,12 +68,13 @@ div [id^='modal-'] {
 
 .checkbox-container {
   display: block;
+  width: 140px;
+  position: relative;
 }
 .checkbox-container-list{
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  position: relative;
 }
 
 .checkbox-dropdown-clicker {
@@ -91,7 +92,7 @@ div [id^='modal-'] {
 }
 
 .checkbox-dropdown-clicker button:hover {
-  background-color: #3CB371;
+  background-color: #008250;
 }
 
 .checkbox-dropdown-clicker button:focus {
@@ -99,7 +100,11 @@ div [id^='modal-'] {
 }
 
 div [class^='checkbox-container-dropdown-']{
-  z-index: 1000;
+  z-index: 998;
+  float: right;
+  top: 30%;
+  right: 2.5%;
+  width: 130%;
   background-color: #F9F7F4;
   position: absolute;
   padding: 0px 10px;
@@ -107,16 +112,28 @@ div [class^='checkbox-container-dropdown-']{
   border-radius: 4px;
 }
 
+.checkbox-reveal{
+  visibility: visible;
+  transform: translateY(2em);
+  transition: all 0.3s;
+}
+
 .checkbox-hidden{
-  display: none;
+  visibility: collapse;
+  opacity: 0;
+  transition: all 0.3s;
 }
 
 .checkbox-item {
   display: flex;
   input {
     width: 10px;
+    margin-right: 3px;
   }
   input:focus {
     outline: none;
+  }
+  p {
+    margin: 0px 2px;
   }
 }
