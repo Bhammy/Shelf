@@ -11,8 +11,8 @@ class BookItemDetail extends React.Component {
   }
 
   showActions () {
-    this.showModal();
     this.props.history.push(`/books/${this.book.id}`);
+    this.showModal();
   }
 
   showModal () {
@@ -23,7 +23,7 @@ class BookItemDetail extends React.Component {
     return (
       <tr className="book-row">
         <td><img src={ this.book.image_url } onClick={ this.showActions }/></td>
-        <td>{ this.book.title }</td>
+        <td><a onClick= { this.showActions }>{ this.book.title }</a></td>
         <td>{ this.book.author }</td>
         <td> Avg Rating </td>
         <td> User Rating </td>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import BookshelfAddItemContainer from '../bookshelves/bookshelf_add_item_container';
+import ReviewFormContainer from '../reviews/review_form_container';
 
 class BookModal extends React.Component {
 
@@ -11,7 +12,24 @@ class BookModal extends React.Component {
   }
 
   closeActions () {
-    this.props.history.push(`/books`);
+    this.props.history.goBack();
+  }
+
+  buildReviews(reviews) {
+    return reviews.map( (review, idx) => {
+      if (review.title) {
+        return(
+          <li key={idx} >
+            <h3>{ review.title } </h3>
+            <span>{ review.rating ? review.rating : null }</span>
+            <p>{ review.body }</p>
+            <h6><i> Reviewed by { review.username }</i></h6>
+          </li>
+        );
+      } else {
+        return null;
+      }
+    })
   }
 
   render () {
@@ -26,6 +44,9 @@ class BookModal extends React.Component {
             <h2>{ this.book.title }</h2>
             <h4><i>{ this.book.author }</i></h4>
             <p> { this.book.description} </p>
+            <h6><i>Rated by { this.book.reviews.length } users</i></h6>
+            <hr/>
+            <ReviewFormContainer />
           </section>
           <section>
             <button onClick={ this.closeActions }>Close Window</button>
@@ -34,7 +55,9 @@ class BookModal extends React.Component {
         <section className="book-modal-reviews">
           <h3>User Reviews</h3>
           <hr />
-          This section reserved for reviews
+          <ul>
+            { this.buildReviews(this.book.reviews) }
+          </ul>
         </section>
       </div>
     );
