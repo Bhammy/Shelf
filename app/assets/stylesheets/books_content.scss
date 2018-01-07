@@ -129,6 +129,7 @@ div [class^='checkbox-container-dropdown-']{
   input {
     width: 10px;
     margin-right: 3px;
+    cursor: pointer;
   }
   input:focus {
     outline: none;
