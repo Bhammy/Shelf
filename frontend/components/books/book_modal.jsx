@@ -13,9 +13,9 @@ class BookModal extends React.Component {
     this.reviewSubmitted = this.reviewSubmitted.bind(this);
   }
 
-  // componentDidMount() {
-  //   this.props.requestBook(this.book.id);
-  // }
+  componentDidMount() {
+    this.props.requestBook(this.book.id);
+  }
 
   closeActions () {
     this.props.history.goBack();

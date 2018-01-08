@@ -5,7 +5,7 @@ import { requestBook } from '../../actions/book_actions';
 import BookModal from './book_modal';
 
 const mapStateToProps = (state, ownProps) => ({
-  book: ownProps.book,
+  book: state.entities.books[ownProps.bookId],
   bookshelves: Object.values(state.entities.bookshelves),
   currentUser: state.session.currentUser,
 });

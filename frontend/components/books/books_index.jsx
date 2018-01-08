@@ -7,29 +7,56 @@ class BooksIndex extends React.Component {
 
   constructor(props) {
     super(props);
+    this.createBookModals = this.createBookModals.bind(this);
+    this.createBookItems = this.createBookItems.bind(this);
   }
 
   componentDidMount() {
     this.props.requestBooks();
     this.props.requestBookshelves(this.props.currentUser.id);
+    this.createBookModals(this.props.books);
+    this.createBookItems(this.props.books);
   }
 
-  render() {
-    let bookItems = this.props.books.map( (book) => {
+  componentWillReceiveProps(newProps) {
+    if (this.equalBooks(this.props.books, newProps.books)) {
+      this.createBookModals(newProps.books);
+      this.createBookItems(newProps.books);
+    }
+  }
+
+  equalBooks(oldProps, newProps) {
+    let sortedOld = oldProps.sort();
+    let sortedNew = newProps.sort();
+    for (var i = 0; i < oldProps.length; i++) {
+      if (oldProps[i] !== newProps[i]) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  createBookModals(books) {
+    this.bookModals = books.map( (book) => {
+      return (
+        <Route exact path={`/books/${book.id}`} key={ book.id } component={() => <BookModalContainer bookId={ book.id } /> } />
+      );
+    });
+  }
+
+  createBookItems(books) {
+    this.bookItems = books.map( (book) => {
       return(
         <BookItemDetail book={ book } key={ book.id } bookshelves={ this.props.bookshelves }/>
       );
     });
+  }
 
-    let bookModals = this.props.books.map( (book) => {
-      return (
-        <Route exact path={`/books/${book.id}`} key={ book.id } component={() => <BookModalContainer book={ book } /> } />
-      );
-    });
+  render() {
 
     return (
       <section className="books-index">
-        { bookModals }
+        { this.bookModals }
         <Route path="/books/:bookId" render={ () => <div className="modal-screen"></div>} />
         <table className="books-table">
           <tbody>
@@ -42,7 +69,7 @@ class BooksIndex extends React.Component {
               <th>Description</th>
               <th>Add to Shelf</th>
             </tr>
-            { bookItems }
+            { this.bookItems }
           </tbody>
         </table>
       </section>
