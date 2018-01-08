@@ -10,7 +10,7 @@ class Api::ReviewsController < ApplicationController
   end
 
   def update
-    @review = Review.find(params[:id])
+    @review = Review.find(review_params[:id])
     if @review.update(review_params)
       render :show
     else
@@ -27,7 +27,7 @@ class Api::ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:book_id, :user_id, :rating, :title, :body)
+    params.require(:review).permit(:id, :book_id, :user_id, :rating, :title, :body)
   end
 
 end

@@ -34,7 +34,7 @@
 
 .modal-screen {
   position: fixed;
-  z-index: 999;
+  z-index: 998;
   top: 0;
   left: 0;
   width: 100%;
@@ -43,7 +43,7 @@
 }
 
 div [id^='modal-'] {
-  z-index: 1000;
+  z-index: 999;
   position: fixed;
   background-color: #F9F7F4;
   width: 75%;

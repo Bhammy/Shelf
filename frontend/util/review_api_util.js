@@ -1,12 +1,12 @@
-export const postReview = (review) => (
-  $.ajax({
+export const postReview = (review) => {
+  return $.ajax({
     method: "POST",
     url: `api/books/${review.book_id}/reviews`,
     data: {
       review
     }
-  })
-);
+  });
+}
 
 export const updateReview = (review) => (
   $.ajax({

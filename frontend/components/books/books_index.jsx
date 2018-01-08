@@ -23,7 +23,7 @@ class BooksIndex extends React.Component {
 
     let bookModals = this.props.books.map( (book) => {
       return (
-        <Route path={`/books/${book.id}`} key={ book.id } component={() => <BookModalContainer book={ book } /> } />
+        <Route exact path={`/books/${book.id}`} key={ book.id } component={() => <BookModalContainer book={ book } /> } />
       );
     });
 

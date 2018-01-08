@@ -9,10 +9,20 @@ class BookModal extends React.Component {
     super(props);
     this.book = props.book;
     this.closeActions = this.closeActions.bind(this);
+    this.state = { reviewSubmitted: "no" }
+    this.reviewSubmitted = this.reviewSubmitted.bind(this);
   }
+
+  // componentDidMount() {
+  //   this.props.requestBook(this.book.id);
+  // }
 
   closeActions () {
     this.props.history.goBack();
+  }
+
+  reviewSubmitted() {
+    this.setState({ reviewSubmitted: "yes" });
   }
 
   buildReviews(reviews) {
@@ -29,7 +39,7 @@ class BookModal extends React.Component {
       } else {
         return null;
       }
-    })
+    });
   }
 
   render () {
@@ -45,8 +55,8 @@ class BookModal extends React.Component {
             <h4><i>{ this.book.author }</i></h4>
             <p> { this.book.description} </p>
             <h6><i>Rated by { this.book.reviews.length } users</i></h6>
+            <ReviewFormContainer bookId={ this.book.id } currentUser={ this.props.currentUser } reviewSubmitted={ this.reviewSubmitted }/>
             <hr/>
-            <ReviewFormContainer />
           </section>
           <section>
             <button onClick={ this.closeActions }>Close Window</button>
