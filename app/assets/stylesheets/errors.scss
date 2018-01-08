@@ -1,0 +1,42 @@
+.errors-display {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 20vh;
+  border: 2px solid red;
+  border-radius: 4px;
+  z-index: 10;
+  background-color: #F9F7F4;
+  width: 400px;
+}
+
+.errors-hidden {
+  display: none;
+}
+
+.errors-display-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 10px;
+}
+
+.errors-display-lis {
+  display: block;
+  width: 80%;
+  color: red;
+  padding: 2px;
+  margin: 0px 10px;
+}
+
+.errors-display-list span {
+  color: none;
+  font-size: 40px;
+  width: 30px;
+  padding-left: 10px;
+}
+
+.errors-display-list span:hover {
+  color: #5C3618;
+  cursor: pointer;
+}

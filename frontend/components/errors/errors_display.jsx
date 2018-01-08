@@ -5,10 +5,23 @@ class ErrorsDisplay extends React.Component {
   constructor(props) {
     super(props);
     this.sessionErrors = this.props.errors.session;
+    this.closeErrors = this.closeErrors.bind(this);
   }
 
   componentWillReceiveProps(newProps) {
     this.sessionErrors = newProps.errors.session;
+    if (this.sessionErrors.length > 0) {
+      this.showErrors();
+    }
+  }
+
+  closeErrors() {
+    $(".errors-display").addClass("errors-hidden");
+    this.props.clearErrors();
+  }
+
+  showErrors() {
+    $(".errors-display").removeClass("errors-hidden");
   }
 
   render() {
@@ -17,9 +30,12 @@ class ErrorsDisplay extends React.Component {
     });
 
     return (
-      <ul className="errors-display">
-        { errors }
-      </ul>
+      <div className="errors-display errors-hidden">
+        <ul className="errors-display-list">
+          <div className="errors-display-lis">{ errors }</div>
+          <span onClick={ this.closeErrors }>×</span>
+        </ul>
+      </div>
     );
   }
 }
