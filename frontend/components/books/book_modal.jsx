@@ -56,12 +56,12 @@ class BookModal extends React.Component {
           </section>
           <section className="book-modal-details">
             <BookshelfAddItemContainer bookshelves={ this.props.bookshelves } bookId={ this.book.id }/>
-            <h2>{ this.book.title }</h2>
+            <h2><b>{ this.book.title }</b></h2>
             <h4><i>{ this.book.author }</i></h4>
             <p> { this.book.description} </p>
             <h6><i>Rated by { this.book.reviews.length } users</i></h6>
-            <ReviewFormContainer bookId={ this.book.id } currentUser={ this.props.currentUser } reviewSubmitted={ this.reviewSubmitted }/>
             <hr/>
+            <ReviewFormContainer bookId={ this.book.id } currentUser={ this.props.currentUser } reviewSubmitted={ this.reviewSubmitted }/>
           </section>
           <section>
             <button onClick={ this.closeActions }>Close Window</button>

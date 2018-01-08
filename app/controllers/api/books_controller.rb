@@ -1,7 +1,7 @@
 class Api::BooksController < ApplicationController
 
   def index
-    @books = Book.all
+    @books = Book.all.order(updated_at: :desc)
   end
 
   def show

@@ -44,15 +44,17 @@ class ReviewForm extends React.Component {
 
   render(){
 
-    let editButton = () => {
-      return(
-        <button onClick={ this.openReview }> Edit My Review </button>
-      );
-    };
+    let editButton = () => (
+      <button onClick={ this.openReview }> Edit My Review </button>
+    );
+
+    let submitButton = () => (
+      <button onClick={ this.action }>Submit Review</button>
+    );
 
     return (
       <div className="review-form">
-        <label>Leave a Review!
+        <label><h3><i>Leave a Review!</i></h3>
           <form>
             <label>Review Title
               <br />
@@ -65,7 +67,7 @@ class ReviewForm extends React.Component {
               <textarea value={ this.state.body } onChange={ this.handleChange("body") } style={{width: "100%", height:"60px"}} disabled={ (this.formType === "create" ? false : true)}></textarea>
             </label>
             <br />
-            <button onClick={ this.action }>Submit Review</button>
+            { submitButton() }
           </form>
         </label>
       </div>

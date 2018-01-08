@@ -26,8 +26,6 @@ class BooksIndex extends React.Component {
   }
 
   equalBooks(oldProps, newProps) {
-    let sortedOld = oldProps.sort();
-    let sortedNew = newProps.sort();
     for (var i = 0; i < oldProps.length; i++) {
       if (oldProps[i] !== newProps[i]) {
         return false;

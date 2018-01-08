@@ -65,6 +65,14 @@ button:hover{
   cursor: pointer;
 }
 
+button:focus {
+  outline: .5px solid #B5B7A9;
+}
+
+textarea:focus {
+  outline: .5px solid #B5B7A9;
+}
+
 input {
   margin: 2px;
   padding: 5px;

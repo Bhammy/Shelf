@@ -24,16 +24,16 @@ class Review < ApplicationRecord
   private
 
   def review_rating_or_text
-    if (self.rating == nil) && (self.body == nil) && (self.title == nil)
+    if (self.rating == nil) && (self.body == "") && (self.title == "")
       errors.add(:rating, "cannot be blank unless leaving a text review.")
     end
   end
 
   def review_title_and_body
     unless (self.body == nil) && (self.title == nil)
-      if self.title == nil
+      if self.title == ""
         errors.add(:title, "cannot be blank.")
-      elsif self.body == nil
+      elsif self.body == ""
         errors.add(:body, "cannot be blank.")
       end
     end
