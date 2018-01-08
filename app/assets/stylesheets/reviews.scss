@@ -2,3 +2,52 @@
   background-color: lightgrey;
   color: grey;
 }
+
+.review-form-rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+.rating-img {
+  width: 24px;
+  height: 24px;
+  background-image: image_url('library_bw_24.png');
+  background-size: cover;
+}
+
+.rating-img:hover,
+.rating-img:hover ~ .rating-img,
+.rating-input:checked ~ .rating-img {
+  background-image: image_url('library_24.png');
+}
+
+.review-form-rating:hover .rating-img:hover,
+.review-form-rating:hover .rating-img:hover ~ .rating-img,
+.rating-input:checked ~ .rating-img {
+  background-image: image_url('library_24.png');
+}
+
+.rating-img,
+.review-form-rating:hover .rating-img {
+  background-image: image_url('library_bw_24.png');
+}
+
+// input[type="radio"] {
+//   width: 24px;
+//   height: 24px;
+//   background-image: image_url('library_bw_24.png');
+//   background-size: cover;
+// }
+//
+// input[type="radio"]:checked {
+//   background-image: image_url('library_24.png');
+// }
+//
+// input[type="radio"]:hover {
+//   background-image: image_url('library_24.png');
+// }
+//
+// input[type="radio"]:focus {
+//   outline: none;
+// }
