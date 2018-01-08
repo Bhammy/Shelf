@@ -18,16 +18,21 @@ class ReviewForm extends React.Component {
     };
   }
 
+  componentWillReceiveProps(newProps) {
+    if (this.props.review !== newProps.review) {
+      this.setState(Object.assign({}, newProps.review));
+    }
+  }
+
   action(e) {
     e.preventDefault();
     if (this.formType === "create") {
-      this.props.postReview(this.state);
-      this.props.reviewSubmitted();
-      // this.props.requestBook(this.props.bookId);
+      this.props.postReview(this.state).then(this.props.requestBook(this.props.book.id));
+      this.formType = "edit";
     } else {
-      this.props.updateReview(this.state);
-      this.props.reviewSubmitted();
-      // this.props.requestBook(this.props.bookId);
+      this.props.updateReview(this.state).then(this.props.requestBook(this.props.book.id));
+      $("input").prop('disabled', true);
+      $("textarea").prop('disabled', true);
     }
   }
 

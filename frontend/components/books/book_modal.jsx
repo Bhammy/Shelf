@@ -17,12 +17,17 @@ class BookModal extends React.Component {
     this.props.requestBook(this.book.id);
   }
 
+  componentWillReceiveProps(newProps) {
+    this.book = newProps.book;
+  }
+
   closeActions () {
     this.props.history.goBack();
   }
 
   reviewSubmitted() {
     this.setState({ reviewSubmitted: "yes" });
+    this.props.requestBooks();
   }
 
   buildReviews(reviews) {

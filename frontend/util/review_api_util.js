@@ -6,7 +6,7 @@ export const postReview = (review) => {
       review
     }
   });
-}
+};
 
 export const updateReview = (review) => (
   $.ajax({
