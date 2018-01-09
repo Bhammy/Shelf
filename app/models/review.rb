@@ -15,7 +15,7 @@
 class Review < ApplicationRecord
   validates :book_id, :user_id, presence: true
   validates_uniqueness_of :book_id, scope: :user_id
-  validate :review_title_and_body, :review_rating_or_text
+  validate :review_title_and_body
 
   belongs_to :book
 
@@ -30,7 +30,7 @@ class Review < ApplicationRecord
   end
 
   def review_title_and_body
-    unless (self.body == nil) && (self.title == nil)
+    unless (self.body == "") && (self.title == "")
       if self.title == ""
         errors.add(:title, "cannot be blank.")
       elsif self.body == ""

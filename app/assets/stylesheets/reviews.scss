@@ -1,3 +1,13 @@
+
+input[type="radio"] {
+  display: hidden;
+  -webkit-appearance: none;
+  background-color: none;
+  border: none;
+  border-radius: none;
+  margin: 0px;
+}
+
 .review-form textarea:disabled, input:disabled {
   background-color: lightgrey;
   color: grey;
@@ -9,45 +19,26 @@
   justify-content: flex-end;
 }
 
-.rating-img {
+label[class^='rating-img'] {
   width: 24px;
   height: 24px;
   background-image: image_url('library_bw_24.png');
   background-size: cover;
 }
 
-.rating-img:hover,
-.rating-img:hover ~ .rating-img,
-.rating-input:checked ~ .rating-img {
+label[class^='rating-img']:hover,
+label[class^='rating-img']:hover ~ label[class^='rating-img'],
+input[class^='rating-input']:checked ~ label[class^='rating-img'] {
   background-image: image_url('library_24.png');
 }
 
-.review-form-rating:hover .rating-img:hover,
-.review-form-rating:hover .rating-img:hover ~ .rating-img,
-.rating-input:checked ~ .rating-img {
+.review-form-rating:hover label[class^='rating-img']:hover,
+.review-form-rating:hover label[class^='rating-img']:hover ~ label[class^='rating-img'],
+input[class^='rating-input']:checked ~ label[class^='rating-img'] {
   background-image: image_url('library_24.png');
 }
 
-.rating-img,
-.review-form-rating:hover .rating-img {
+label[class^='rating-img'],
+.review-form-rating:hover label[class^='rating-img'] {
   background-image: image_url('library_bw_24.png');
 }
-
-// input[type="radio"] {
-//   width: 24px;
-//   height: 24px;
-//   background-image: image_url('library_bw_24.png');
-//   background-size: cover;
-// }
-//
-// input[type="radio"]:checked {
-//   background-image: image_url('library_24.png');
-// }
-//
-// input[type="radio"]:hover {
-//   background-image: image_url('library_24.png');
-// }
-//
-// input[type="radio"]:focus {
-//   outline: none;
-// }

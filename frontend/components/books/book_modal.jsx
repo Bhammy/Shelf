@@ -32,7 +32,7 @@ class BookModal extends React.Component {
 
   buildReviews(reviews) {
     return reviews.map( (review, idx) => {
-      if (review.title) {
+      if (review) {
         return(
           <li key={idx} >
             <h3>{ review.title } </h3>

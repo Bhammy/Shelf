@@ -46,6 +46,8 @@ class BooksIndex extends React.Component {
 
   createBookItems(books) {
     this.bookItems = books.map( (book) => {
+      // console.log(book.id);
+      // console.log(this.bookReviews[book.id]);
       return(
         <BookItemDetail book={ book }
           key={ book.id }

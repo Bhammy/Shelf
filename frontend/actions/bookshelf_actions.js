@@ -7,6 +7,10 @@ export const RECEIVE_BOOKSHELVES = "RECEIVE_BOOKSHELVES";
 
 export const REMOVE_BOOKSHELF = "REMOVE_BOOKSHELF";
 
+export const REMOVE_BOOK_FROM_BOOKSHELF = "REMOVE_BOOK_FROM_BOOKSHELF";
+
+export const ADD_BOOK_TO_BOOKSHELF = "ADD_BOOK_TO_BOOKSHELF";
+
 export const receiveBookshelf = (bookshelf) => ({
   type: RECEIVE_BOOKSHELF,
   bookshelf
@@ -20,6 +24,18 @@ export const receiveBookshelves = (bookshelves) => ({
 export const removeBookshelf = (bookshelf) => ({
   type: REMOVE_BOOKSHELF,
   bookshelfId: bookshelf.id
+});
+
+export const addBookToBookshelf = (bookshelfId, book) => ({
+  type: ADD_BOOK_TO_BOOKSHELF,
+  bookshelfId,
+  book
+});
+
+export const removeBookFromBookshelf = (bookshelfId, bookId) => ({
+  type: REMOVE_BOOK_FROM_BOOKSHELF,
+  bookshelfId,
+  bookId
 });
 
 export const requestBookshelves = (userId) => (dispatch) => {

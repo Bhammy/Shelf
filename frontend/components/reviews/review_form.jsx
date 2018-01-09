@@ -1,5 +1,5 @@
 import React from 'react';
-import ReviewRating from './review_rating';
+import ReviewRatingContainer from './review_rating_container';
 
 class ReviewForm extends React.Component {
   constructor(props) {
@@ -62,7 +62,7 @@ class ReviewForm extends React.Component {
       <div className="review-form">
         <label><h3><i>Leave a Review!</i></h3>
           <form>
-            <ReviewRating rating={ this.state.rating } setRating={ this.setRating } bookId={ this.props.book.id } />
+            <ReviewRatingContainer bookId={ this.props.book.id } />
             <label>Review Title
                 <br />
                 <input type="text" value={ this.state.title } onChange={ this.handleChange("title") } disabled={ (this.formType === "create" ? false : true)} />
