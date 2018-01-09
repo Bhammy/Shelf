@@ -11,9 +11,11 @@ class BookshelfCheckbox extends React.Component {
 
   toggleCheck(e) {
     if (this.state.isChecked) {
+      this.props.toggleDropdown();
       this.props.removeBookFromShelf(this.shelf_membership);
       this.setState({ isChecked: false });
     } else {
+      this.props.toggleDropdown();
       this.props.addBookToShelf(this.shelf_membership);
       this.setState({ isChecked: true });
     }

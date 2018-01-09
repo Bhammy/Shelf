@@ -3,8 +3,8 @@ class Api::ShelfMembershipsController < ApplicationController
   def create
     @shelf_membership = ShelfMembership.new(shelf_membership_params)
     if @shelf_membership.save
-      @book = @shelf_membership.book
-      render "api//books/book"
+      @bookshelf = @shelf_membership.shelf
+      render "api/bookshelves/show"
     else
       render json: @shelf_membership.errors.full_messages, status: 422
     end
@@ -13,7 +13,8 @@ class Api::ShelfMembershipsController < ApplicationController
   def destroy
     @shelf_membership = ShelfMembership.includes(:book).where(shelf_membership_params).first
     @shelf_membership.destroy
-    render json: @shelf_membership.book, status: 202
+    @bookshelf = Bookshelf.find(@shelf_membership.shelf_id)
+    render "api/bookshelves/show", status: 202;
   end
 
   private

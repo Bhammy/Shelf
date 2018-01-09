@@ -22,11 +22,11 @@ class BookshelfAddItemDropdown extends React.Component {
       key={ idx }
       addBookToShelf={ this.props.addBookToShelf }
       removeBookFromShelf={ this.props.removeBookFromShelf }
+      toggleDropdown={ this.toggleDropdown }
     />);
   }
 
-  toggleDropdown(e) {
-    e.preventDefault();
+  toggleDropdown() {
     this.setState({ dropdownShown: !this.state.dropdownShown });
     if (this.state.dropdownShown) {
       $(`.checkbox-container-dropdown-${this.props.bookId}`).removeClass("checkbox-reveal");

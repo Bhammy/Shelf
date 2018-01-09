@@ -9,19 +9,6 @@ class BookItemDetail extends React.Component {
     super(props);
     this.book = this.props.book;
     this.showActions = this.showActions.bind(this);
-    // this.setRating = this.setRating.bind(this);
-    // if (this.props.bookReview) {
-    //   this.rating = this.props.bookReview.rating;
-    //   this.state = Object.assign({}, this.props.bookReview);
-    //   this.action = this.props.updateReview;
-    // } else {
-    //   this.rating = 0;
-    //   this.state = {
-    //     book_id: this.book.id,
-    //     user_id: this.props.currentUserId,
-    //   };
-    //   this.action = this.props.postReview;
-    // }
   }
 
   showActions () {
@@ -33,16 +20,6 @@ class BookItemDetail extends React.Component {
     $(".modal-screen").removeClass("hide-modal-screen");
   }
 
-  // setRating (e) {
-  //   // console.log(this.state);
-  //   // console.log(this.book);
-  //   // console.log(this.props.bookReview);
-  //   // debugger
-  //   this.setState({ rating: e.currentTarget.value });
-  //   // debugger
-  //   this.action(this.state);
-  // }
-
   render() {
     return (
       <tr className="book-row">
@@ -50,13 +27,13 @@ class BookItemDetail extends React.Component {
         <td><a onClick= { this.showActions }>{ this.book.title }</a></td>
         <td>{ this.book.author }</td>
         <td> Avg Rating </td>
-        <td> <ReviewRatingContainer bookId={ this.book.id }/> </td>
+        <td>  </td>
         <td>{ this.book.description.slice(0, 80)+"..." }</td>
         <td> <BookshelfAddItemContainer bookshelves={ this.props.bookshelves } bookId={ this.book.id }/> </td>
       </tr>
     );
   }
-
+  // <ReviewRatingContainer bookId={ this.book.id }/>
 }
 
 export default withRouter(BookItemDetail);
