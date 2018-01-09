@@ -54,6 +54,48 @@ a:hover {
   overflow: visible;
 }
 
+.main-content-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.main-content-left, .main-content-right {
+  height: 100%;
+  width: auto;
+  min-height: 400px;
+  min-width: 100px;
+  background-color: lightgrey;
+  margin: 0;
+  padding: 0;
+  z-index: 4;
+}
+
+.main-content-left {
+  border-right: 1px solid lightgrey;
+}
+
+.main-content-right {
+  border-left: 1px solid lightgrey;
+}
+
+.main-content-left-inner, .main-content-right-inner {
+  background-color: #F9F7F4;
+  margin: 0;
+  padding: 0;
+  min-height: 400px;
+  min-width: 100px;
+  z-index: 5;
+}
+
+.main-content-left-inner {
+  border-radius: 0 100px 0 0;
+
+}
+
+.main-content-right-inner {
+  border-radius: 100px 0 0 0;
+}
+
 button {
   background-color: #3B210B;
   color: #F9F7F4;
@@ -61,7 +103,6 @@ button {
   padding: 8px 12px;
   font-size: 12px;
   border-radius: 4px;
-  // font-family: 'PT Serif', serif;
   font-family: 'Roboto Mono', monospace;
 }
 

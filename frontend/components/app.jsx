@@ -19,11 +19,21 @@ const App = () => {
         <AuthRoute exact path="/" component={ LoginContainer } />
         <ProtectedRoute path="/" component={ NavContainer } />
       </nav>
-      <section className = "main-content" >
-        <Route path="/" component={ ErrorsContainer } />
-        <ProtectedRoute path="/books" component={ BooksContainer } />
-        <ProtectedRoute path="/users/:userId/bookshelves" component={ BookshelfContainer } />
-        <AuthRoute exact path="/" component={ SignupContainer } />
+      <section className="main-content-container">
+        <div className="main-content-left">
+          <div className="main-content-left-inner">
+          </div>
+        </div>
+        <section className= "main-content" >
+          <Route path="/" component={ ErrorsContainer } />
+          <ProtectedRoute path="/books" component={ BooksContainer } />
+          <ProtectedRoute path="/users/:userId/bookshelves" component={ BookshelfContainer } />
+          <AuthRoute exact path="/" component={ SignupContainer } />
+        </section>
+        <div className="main-content-right">
+          <div className="main-content-right-inner">
+          </div>
+        </div>
       </section>
       <footer className = "footer" >
         <Footer />
