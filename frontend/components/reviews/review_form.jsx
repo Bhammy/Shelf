@@ -20,12 +20,6 @@ class ReviewForm extends React.Component {
     };
   }
 
-  componentWillReceiveProps(newProps) {
-    if (this.props.review !== newProps.review) {
-      this.setState(Object.assign({}, newProps.review));
-    }
-  }
-
   action(e) {
     e.preventDefault();
     if (this.formType === "create") {
@@ -33,15 +27,17 @@ class ReviewForm extends React.Component {
       this.formType = "edit";
     } else {
       this.props.updateReview(this.state).then(this.props.requestBook(this.props.book.id));
-      $("input").prop('disabled', true);
-      $("textarea").prop('disabled', true);
+      $(`#review-input-${this.props.book.id}`).prop('disabled', true);
+      $(`#review-textarea-${this.props.book.id}`).prop('disabled', true);
     }
   }
 
-  openReview(e) {
-    e.preventDefault();
-    $("input").prop('disabled', false);
-    $("textarea").prop('disabled', false);
+  openReview(bookId) {
+    return (e) => {
+      e.preventDefault();
+      $(`#review-input-${bookId}`).prop('disabled', false);
+      $(`#review-textarea-${bookId}`).prop('disabled', false);
+    };
   }
 
   setRating (e) {
@@ -51,7 +47,7 @@ class ReviewForm extends React.Component {
   render(){
 
     let editButton = () => (
-      <button onClick={ this.openReview }> Edit My Review </button>
+      <button onClick={ this.openReview(this.props.book.id) }> Edit My Review </button>
     );
 
     let submitButton = () => (
@@ -65,13 +61,13 @@ class ReviewForm extends React.Component {
             <ReviewRatingContainer bookId={ this.props.book.id } />
             <label>Review Title
                 <br />
-                <input type="text" value={ this.state.title } onChange={ this.handleChange("title") } disabled={ (this.formType === "create" ? false : true)} />
+                <input type="text" id={`review-input-${this.props.book.id}`} value={ this.state.title } onChange={ this.handleChange("title") } disabled={ (this.formType === "create" ? false : true)} />
               </label>
               { (this.formType === "create") ? null : editButton() }
               <br />
               <label>Review Body
                 <br />
-                <textarea value={ this.state.body } onChange={ this.handleChange("body") } style={{width: "100%", height:"60px"}} disabled={ (this.formType === "create" ? false : true)}></textarea>
+                <textarea id={`review-textarea-${this.props.book.id}`} value={ this.state.body } onChange={ this.handleChange("body") } style={{width: "100%", height:"60px"}} disabled={ (this.formType === "create" ? false : true)}></textarea>
               </label>
               <br />
               { submitButton() }

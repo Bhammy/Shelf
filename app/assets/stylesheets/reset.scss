@@ -31,6 +31,10 @@ a {
   color: inherit;
 }
 
+th {
+  font-family: 'Roboto Mono', monospace;
+}
+
 a:hover {
   text-decoration: underline;
   cursor: pointer;
@@ -74,13 +78,14 @@ textarea:focus {
   border-radius: 4px;
 }
 
-input[type="text"] {
+input[type="text"], input[type="password"] {
   margin: 2px;
   padding: 5px;
   width: 200px;
   border: 1px solid lightgrey;
+  border-radius: 4px;
 }
 
-input[type="text"]:focus {
+input:focus {
   outline: .5px solid #B5B7A9;
 }

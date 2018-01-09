@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import ReviewRatingImage from '../reviews/review_rating_img';
 import BookshelfAddItemContainer from '../bookshelves/bookshelf_add_item_container';
 import ReviewFormContainer from '../reviews/review_form_container';
 
@@ -34,9 +35,8 @@ class BookModal extends React.Component {
     return reviews.map( (review, idx) => {
       if (review) {
         return(
-          <li key={idx} >
-            <h3>{ review.title } </h3>
-            <span>{ review.rating ? review.rating : null }</span>
+          <li key={idx} className="book-review-item">
+            { review.rating ? this.buildRatingImage(review.rating) : null }<h3>{ review.title }</h3>
             <p>{ review.body }</p>
             <h6><i> Reviewed by { review.username }</i></h6>
           </li>
@@ -45,6 +45,10 @@ class BookModal extends React.Component {
         return null;
       }
     });
+  }
+
+  buildRatingImage(rating) {
+    return(<ReviewRatingImage rating={ rating } />)
   }
 
   render () {
@@ -69,7 +73,6 @@ class BookModal extends React.Component {
         </content>
         <section className="book-modal-reviews">
           <h3>User Reviews</h3>
-          <hr />
           <ul>
             { this.buildReviews(this.book.reviews) }
           </ul>

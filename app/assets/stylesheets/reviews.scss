@@ -8,6 +8,10 @@ input[type="radio"] {
   margin: 0px;
 }
 
+input[type="radio"]:focus {
+  outline: none;
+}
+
 .review-form textarea:disabled, input:disabled {
   background-color: lightgrey;
   color: grey;
@@ -41,4 +45,27 @@ input[class^='rating-input']:checked ~ label[class^='rating-img-'] {
 label[class^='rating-img-'],
 .review-form-rating:hover label[class^='rating-img-'] {
   background-image: image_url('library_bw_24.png');
+}
+
+.book-review-item {
+  border-top: 1px solid lightgrey;
+  border-radius: 4px;
+  h3 {
+    font-family: 'Roboto Mono', monospace;
+  }
+  h6, p {
+    margin-left: 10px;
+  }
+}
+
+.ratingImg {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  height: 24px;
+  padding: 10px 0px;
+  h4 {
+    margin-left: 4px;
+  }
 }
