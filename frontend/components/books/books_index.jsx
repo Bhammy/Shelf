@@ -7,6 +7,7 @@ class BooksIndex extends React.Component {
 
   constructor(props) {
     super(props);
+    this.bookReviews = this.props.bookReviews;
     this.createBookModals = this.createBookModals.bind(this);
     this.createBookItems = this.createBookItems.bind(this);
   }
@@ -20,6 +21,7 @@ class BooksIndex extends React.Component {
 
   componentWillReceiveProps(newProps) {
     if (this.equalBooks(this.props.books, newProps.books)) {
+      this.bookReviews = newProps.bookReviews;
       this.createBookModals(newProps.books);
       this.createBookItems(newProps.books);
     }
@@ -45,7 +47,14 @@ class BooksIndex extends React.Component {
   createBookItems(books) {
     this.bookItems = books.map( (book) => {
       return(
-        <BookItemDetail book={ book } key={ book.id } bookshelves={ this.props.bookshelves }/>
+        <BookItemDetail book={ book }
+          key={ book.id }
+          bookshelves={ this.props.bookshelves }
+          bookReview={ this.bookReviews[book.id] }
+          currentUserId={ this.props.currentUser.id }
+          updateReview={ this.props.updateReview }
+          postReview={ this.props.postReview }
+        />
       );
     });
   }

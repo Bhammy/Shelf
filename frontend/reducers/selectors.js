@@ -15,3 +15,15 @@ export const selectBookReview = (state, bookId, userId) => {
     };
   }
 };
+
+export const selectUserReviews = (state, userId) => {
+  let userReviews = {};
+  Object.values(state.entities.books).forEach( (book) => {
+    book.reviews.forEach( (review) => {
+      if (review.user_id === userId) {
+        userReviews[book.id] = review;
+      }
+    });
+  });
+  return userReviews;
+};

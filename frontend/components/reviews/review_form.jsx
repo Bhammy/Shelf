@@ -62,7 +62,7 @@ class ReviewForm extends React.Component {
       <div className="review-form">
         <label><h3><i>Leave a Review!</i></h3>
           <form>
-            <ReviewRating rating={ this.state.rating } setRating={ this.setRating } />
+            <ReviewRating rating={ this.state.rating } setRating={ this.setRating } bookId={ this.props.book.id } />
             <label>Review Title
                 <br />
                 <input type="text" value={ this.state.title } onChange={ this.handleChange("title") } disabled={ (this.formType === "create" ? false : true)} />

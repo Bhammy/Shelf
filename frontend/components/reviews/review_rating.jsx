@@ -1,10 +1,9 @@
 import React from 'react';
 
-const ReviewRating = ({ setRating, rating }) => {
-
+const ReviewRating = ({ setRating, rating, bookId }) => {
   return (
     <div className="review-form-rating">
-        <input type="radio" value={5} name="rating"
+        <input type="radio" value={5} name={`rating-${bookId}`}
           onClick={ setRating }
           className="rating-input"
           id="rating-input-5"
@@ -12,7 +11,7 @@ const ReviewRating = ({ setRating, rating }) => {
       <label className="rating-img" htmlFor="rating-input-5">
       </label>
 
-        <input type="radio" value={4} name="rating"
+        <input type="radio" value={4} name={`rating-${bookId}`}
           onClick={ setRating }
           className="rating-input"
           id="rating-input-4"
@@ -20,7 +19,7 @@ const ReviewRating = ({ setRating, rating }) => {
       <label className="rating-img" htmlFor="rating-input-4">
       </label>
 
-        <input type="radio" value={3} name="rating"
+        <input type="radio" value={3} name={`rating-${bookId}`}
           onClick={ setRating }
           className="rating-input"
           id="rating-input-3"
@@ -28,7 +27,7 @@ const ReviewRating = ({ setRating, rating }) => {
       <label className="rating-img" htmlFor="rating-input-3">
       </label>
 
-        <input type="radio" value={2} name="rating"
+        <input type="radio" value={2} name={`rating-${bookId}`}
           onClick={ setRating }
           className="rating-input"
           id="rating-input-2"
@@ -36,7 +35,7 @@ const ReviewRating = ({ setRating, rating }) => {
       <label className="rating-img" htmlFor="rating-input-2">
       </label>
 
-        <input type="radio" value={1} name="rating"
+        <input type="radio" value={1} name={`rating-${bookId}`}
           onClick={ setRating }
           className="rating-input"
           id="rating-input-1"
