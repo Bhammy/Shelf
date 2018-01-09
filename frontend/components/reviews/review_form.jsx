@@ -6,7 +6,7 @@ class ReviewForm extends React.Component {
     super(props);
     this.state = Object.assign({}, this.props.review);
     this.action = this.action.bind(this);
-    if (this.state.title === "") {
+    if (this.state.rating === 0) {
       this.formType = "create";
     } else {
       this.formType = "edit";

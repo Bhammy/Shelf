@@ -27,13 +27,12 @@ class BookItemDetail extends React.Component {
         <td><a onClick= { this.showActions }>{ this.book.title }</a></td>
         <td>{ this.book.author }</td>
         <td> Avg Rating </td>
-        <td>  </td>
+        <td> <ReviewRatingContainer bookId={ this.book.id }/> </td>
         <td>{ this.book.description.slice(0, 80)+"..." }</td>
         <td> <BookshelfAddItemContainer bookshelves={ this.props.bookshelves } bookId={ this.book.id }/> </td>
       </tr>
     );
   }
-  // <ReviewRatingContainer bookId={ this.book.id }/>
 }
 
 export default withRouter(BookItemDetail);

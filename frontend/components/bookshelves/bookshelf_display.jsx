@@ -5,7 +5,6 @@ class BookshelfDisplay extends React.Component {
 
   constructor(props) {
     super(props);
-    this.bookshelf = this.props.bookshelf;
   }
 
   componentDidMount() {
@@ -14,26 +13,7 @@ class BookshelfDisplay extends React.Component {
     }
   }
 
-  componentWillReceiveProps(newProps) {
-    if (this.bookshelf != newProps.bookshelf) {
-      this.bookshelf = newProps.bookshelf;
-    }
-  }
-
   render () {
-
-    let bookItems;
-
-    if (this.bookshelf) {
-        bookItems = this.bookshelf.books.map( (book, idx) => {
-        return (
-          <BookItemDetail book={ book} key = { idx } bookshelves={ this.props.bookshelves }/>
-        );
-      });
-    } else {
-      bookItems = null;
-    }
-
     return (
       <div>
         <table className="books-table">
@@ -47,7 +27,7 @@ class BookshelfDisplay extends React.Component {
               <th>Description</th>
               <th>Add to Shelf</th>
             </tr>
-            { bookItems }
+            { this.props.bookshelf.books.map( (book, idx) => ( <BookItemDetail book={ book } key = { book.id } bookshelves={ this.props.bookshelves }/>)) }
           </tbody>
         </table>
       </div>

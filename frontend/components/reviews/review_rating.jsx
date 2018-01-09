@@ -4,7 +4,6 @@ class ReviewRating extends React.Component {
 
   constructor(props) {
     super(props);
-    this.bookId = this.props.book.id;
     this.setRating = this.setRating.bind(this);
     if (this.props.review.rating) {
       this.state = Object.assign({}, this.props.review);
@@ -25,44 +24,44 @@ class ReviewRating extends React.Component {
   render() {
     return (
       <div className="review-form-rating">
-          <input type="radio" value={5} name={`rating-${this.bookId}`}
+          <input type="radio" value={5} name={`rating-${this.props.bookId}`}
             onClick={ this.setRating }
             className="rating-input"
-            id="rating-input-5"
+            id={`rating-input-5-${this.props.bookId}`}
             defaultChecked={ (this.rating === 5 ) } />
-          <label className={`rating-img-${this.bookId}`} htmlFor="rating-input-5">
+          <label className={`rating-img-${this.props.bookId}`} htmlFor={`rating-input-5-${this.props.bookId}`}>
         </label>
 
-          <input type="radio" value={4} name={`rating-${this.bookId}`}
+          <input type="radio" value={4} name={`rating-${this.props.bookId}`}
             onClick={ this.setRating }
             className="rating-input"
-            id="rating-input-4"
+            id={`rating-input-4-${this.props.bookId}`}
             defaultChecked={ (this.rating === 4 ) } />
-          <label className={`rating-img-${this.bookId}`} htmlFor="rating-input-4">
+          <label className={`rating-img-${this.props.bookId}`} htmlFor={`rating-input-4-${this.props.bookId}`}>
         </label>
 
-          <input type="radio" value={3} name={`rating-${this.bookId}`}
+          <input type="radio" value={3} name={`rating-${this.props.bookId}`}
             onClick={ this.setRating }
             className="rating-input"
-            id="rating-input-3"
+            id={`rating-input-3-${this.props.bookId}`}
             defaultChecked={ (this.rating === 3 ) } />
-          <label className={`rating-img-${this.bookId}`} htmlFor="rating-input-3">
+          <label className={`rating-img-${this.props.bookId}`} htmlFor={`rating-input-3-${this.props.bookId}`}>
         </label>
 
-          <input type="radio" value={2} name={`rating-${this.bookId}`}
+          <input type="radio" value={2} name={`rating-${this.props.bookId}`}
             onClick={ this.setRating }
             className="rating-input"
-            id="rating-input-2"
+            id={`rating-input-2-${this.props.bookId}`}
             defaultChecked={ (this.rating === 2 ) } />
-          <label className={`rating-img-${this.bookId}`} htmlFor="rating-input-2">
+          <label className={`rating-img-${this.props.bookId}`} htmlFor={`rating-input-2-${this.props.bookId}`}>
         </label>
 
-          <input type="radio" value={1} name={`rating-${this.bookId}`}
+          <input type="radio" value={1} name={`rating-${this.props.bookId}`}
             onClick={ this.setRating }
             className="rating-input"
-            id="rating-input-1"
+            id={`rating-input-1-${this.props.bookId}`}
             defaultChecked={ (this.rating === 1 ) } />
-          <label className={`rating-img-${this.bookId}`} htmlFor="rating-input-1">
+          <label className={`rating-img-${this.props.bookId}`} htmlFor={`rating-input-1-${this.props.bookId}`}>
         </label>
       </div>
     );

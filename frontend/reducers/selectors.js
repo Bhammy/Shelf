@@ -3,7 +3,7 @@ export const selectBookReview = (state, bookId, userId) => {
   let blankReview = {
     book_id: bookId,
     user_id: userId,
-    rating: null,
+    rating: 0,
     title: "",
     body: "",
   };

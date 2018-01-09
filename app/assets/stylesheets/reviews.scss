@@ -19,26 +19,26 @@ input[type="radio"] {
   justify-content: flex-end;
 }
 
-label[class^='rating-img'] {
+label[class^='rating-img-'] {
   width: 24px;
   height: 24px;
   background-image: image_url('library_bw_24.png');
   background-size: cover;
 }
 
-label[class^='rating-img']:hover,
-label[class^='rating-img']:hover ~ label[class^='rating-img'],
-input[class^='rating-input']:checked ~ label[class^='rating-img'] {
+label[class^='rating-img-']:hover,
+label[class^='rating-img-']:hover ~ label[class^='rating-img-'],
+input[class^='rating-input']:checked ~ label[class^='rating-img-'] {
   background-image: image_url('library_24.png');
 }
 
-.review-form-rating:hover label[class^='rating-img']:hover,
-.review-form-rating:hover label[class^='rating-img']:hover ~ label[class^='rating-img'],
-input[class^='rating-input']:checked ~ label[class^='rating-img'] {
+.review-form-rating:hover label[class^='rating-img-']:hover,
+.review-form-rating:hover label[class^='rating-img-']:hover ~ label[class^='rating-img-'],
+input[class^='rating-input']:checked ~ label[class^='rating-img-'] {
   background-image: image_url('library_24.png');
 }
 
-label[class^='rating-img'],
-.review-form-rating:hover label[class^='rating-img'] {
+label[class^='rating-img-'],
+.review-form-rating:hover label[class^='rating-img-'] {
   background-image: image_url('library_bw_24.png');
 }
