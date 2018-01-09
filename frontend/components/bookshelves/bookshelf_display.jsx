@@ -14,6 +14,15 @@ class BookshelfDisplay extends React.Component {
   }
 
   render () {
+
+    let bookItems;
+
+    if (this.props.match.params.id === "new") {
+      bookItems = null;
+    } else {
+      bookItems = this.props.bookshelf.books.map( (book, idx) => ( <BookItemDetail book={ book } key = { book.id } bookshelves={ this.props.bookshelves }/>) );
+    }
+
     return (
       <div>
         <table className="books-table">
@@ -27,7 +36,7 @@ class BookshelfDisplay extends React.Component {
               <th>Description</th>
               <th>Add to Shelf</th>
             </tr>
-            { this.props.bookshelf.books.map( (book, idx) => ( <BookItemDetail book={ book } key = { book.id } bookshelves={ this.props.bookshelves }/>)) }
+            { bookItems }
           </tbody>
         </table>
       </div>

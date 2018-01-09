@@ -13,6 +13,7 @@
 .bookshelf-index {
   width: 14%;
   font-size: 14px;
+  font-family: 'Roboto Mono', monospace;
   ul {
     padding-bottom: 10px;
     border-bottom: 1px solid lightgrey;
@@ -21,7 +22,7 @@
 
 .bookshelf-display {
   margin-left: 40px;
-  width: 80%;
+  width: 82%;
 }
 
 .bookshelf-nav {
@@ -51,4 +52,5 @@
   width: 100%;
   display: block;
   border-bottom: 1px solid lightgrey;
+  font-family: 'Roboto Mono', monospace;
 }

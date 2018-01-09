@@ -1,14 +1,10 @@
 nav, footer {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  flex-wrap: nowrap;
   align-items: center;
   padding: 0px 30px;
   border-bottom: 1px solid lightgrey;
-  ul {
-    display: flex;
-    align-items: center;
-  }
   a {
     text-decoration: none;
     color: inherit;
@@ -17,13 +13,30 @@ nav, footer {
 
 nav {
   height: 60px;
-  background: linear-gradient(#F4F2E9, #F9F7F4);
+  background: linear-gradient(#F9F7F4, #F4F2E9);
+}
+
+.nav-links {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.right-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 footer {
   border-top: 1px solid lightgrey;
   border-bottom: none;
-  background: linear-gradient(#F9F7F4, #F4F2E9);
+  background: linear-gradient(#F4F2E9, #F9F7F4);
+  ul {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .footer-links {

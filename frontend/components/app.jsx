@@ -16,7 +16,6 @@ const App = () => {
   return (
     <div className="app-container">
       <nav>
-        <h1><Link to="/"> ]shelf[ </Link></h1>
         <AuthRoute exact path="/" component={ LoginContainer } />
         <ProtectedRoute path="/" component={ NavContainer } />
       </nav>

@@ -32,7 +32,7 @@ class User < ApplicationRecord
   def create_base_bookshelves
     Bookshelf.create(shelf_title: "Owned Books", user_id: self.id)
     Bookshelf.create(shelf_title: "Read Books", user_id: self.id)
-    Bookshelf.create(shelf_title: "Currently Reading", user_id: self.id)
+    Bookshelf.create(shelf_title: "Want to Read", user_id: self.id)
   end
 
   def password=(password)
