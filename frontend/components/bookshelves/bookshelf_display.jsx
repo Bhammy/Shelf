@@ -1,5 +1,5 @@
 import React from 'react';
-import BookItemDetail from '../books/book_item_detail';
+import BookItemDetailContainer from '../books/book_item_detail_container';
 
 class BookshelfDisplay extends React.Component {
 
@@ -20,7 +20,11 @@ class BookshelfDisplay extends React.Component {
     if (this.props.match.params.id === "new") {
       bookItems = null;
     } else {
-      bookItems = this.props.bookshelf.books.map( (book, idx) => ( <BookItemDetail book={ book } key = { book.id } bookshelves={ this.props.bookshelves }/>) );
+      bookItems = this.props.bookshelf.books.map( (book, idx) => (
+        <BookItemDetailContainer
+          bookId={ book.id }
+          key = { book.id }
+          bookshelves={ this.props.bookshelves }/>) );
     }
 
     return (

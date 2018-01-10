@@ -4,7 +4,12 @@ class ReviewRating extends React.Component {
 
   constructor(props) {
     super(props);
-    this.setRating = this.setRating.bind(this);
+    if (this.props.setRating) {
+      this.setRating = this.props.setRating;
+    } else {
+      this.setRating = this.setRating.bind(this);
+    }
+
     if (this.props.review.rating) {
       this.state = Object.assign({}, this.props.review);
       this.action = this.props.updateReview.bind(this);
@@ -14,12 +19,22 @@ class ReviewRating extends React.Component {
       this.state = Object.assign({}, this.props.review);
       this.action = this.props.postReview.bind(this);
     }
+    
+  }
+
+  componentWillReceiveProps(newProps) {
+    if (newProps.review !== this.state) {
+      this.setState(newProps.review);
+    }
   }
 
   setRating (e) {
     let val = parseFloat(e.target.value);
     this.setState({ rating: val }, () => {
-      this.action(this.state).then( () => this.props.ratingSet() );
+      this.action(this.state).then( () => {
+        this.props.ratingSet();
+        this.action = this.props.updateReview.bind(this);
+      });
     });
   }
 

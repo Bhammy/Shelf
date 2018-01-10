@@ -1,5 +1,5 @@
 import React from 'react';
-import BookItemDetail from './book_item_detail';
+import BookItemDetailContainer from './book_item_detail_container';
 import BookModalContainer from './book_modal_container';
 import { Route } from 'react-router-dom';
 
@@ -14,10 +14,11 @@ class BooksIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.requestBooks();
+    this.props.requestBooks().then( () => {
+      this.createBookModals(this.props.books);
+      this.createBookItems(this.props.books);
+    });
     this.props.requestBookshelves(this.props.currentUser.id);
-    this.createBookModals(this.props.books);
-    this.createBookItems(this.props.books);
   }
 
   componentWillReceiveProps(newProps) {
@@ -54,14 +55,10 @@ class BooksIndex extends React.Component {
   createBookItems(books) {
     this.bookItems = books.map( (book) => {
       return(
-        <BookItemDetail book={ book }
+        <BookItemDetailContainer bookId={ book.id }
           key={ book.id }
           bookshelves={ this.props.bookshelves }
           bookReview={ this.bookReviews[book.id] }
-          currentUserId={ this.props.currentUser.id }
-          updateReview={ this.props.updateReview }
-          postReview={ this.props.postReview }
-          requestBook={ this.props.requestBook }
         />
       );
     });
