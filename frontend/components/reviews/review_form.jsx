@@ -67,7 +67,12 @@ class ReviewForm extends React.Component {
               <br />
               <label>Review Body
                 <br />
-                <textarea id={`review-textarea-${this.props.book.id}`} value={ this.state.body } onChange={ this.handleChange("body") } style={{width: "100%", height:"60px"}} disabled={ (this.formType === "create" ? false : true)}></textarea>
+                <textarea id={`review-textarea-${this.props.book.id}`}
+                  value={ this.state.body }
+                  onChange={ this.handleChange("body") }
+                  style={{width: "100%", height:"60px"}}
+                  disabled={ (this.formType === "create" ? false : true)}>
+                </textarea>
               </label>
               <br />
               { submitButton() }
