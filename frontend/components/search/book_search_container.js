@@ -1,11 +1,12 @@
-import React from 'react';
+import { connect } from 'react-redux';
+import BookSearchBar from './book_search_bar';
 
-const BookSearchContainer = () => {
-  return(
-    <div className="book-search-container">
-      <input type="text" id="book-search-bar"/>
-    </div>
-  );
-};
+const mapStateToProps = (state, ownProps) => ({
 
-export default BookSearchContainer;
+});
+
+const mapDispatchToProps = (dispatch, ownProps) => ({
+
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(BookSearchBar);

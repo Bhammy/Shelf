@@ -14,7 +14,13 @@ nav, footer {
 
 nav {
   height: 60px;
-  background: linear-gradient(#F4F2E9, #F9F7F4);
+  background-color: lightgrey;
+  border-bottom: 1px solid darkgrey;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  z-index: 10;
+  // background: linear-gradient(#F4F2E9, #F9F7F4);
 }
 
 .nav-links {
