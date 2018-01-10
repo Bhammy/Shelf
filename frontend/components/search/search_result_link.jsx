@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 
 const SearchResultLink = ({ book }) => {
   return(
-    <li><Link to={`/books/${book.id}`}>{ book.title }</Link></li>
+    <li><Link to={`/books/${book.id}`}><img src={ book.image_url }/>
+      <p>{ book.title.length > 40 ? book.title.slice(0,40)+" ..." : book.title }</p>
+    </Link></li>
   )
 };
 

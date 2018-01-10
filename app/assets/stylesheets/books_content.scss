@@ -52,11 +52,12 @@
 div [id^='modal-'] {
   z-index: 999;
   position: fixed;
+  top: 7%;
   background-color: #F9F7F4;
   width: 80%;
   left: 50%;
   margin-left: -42%;
-  height: 75%;
+  height: 80%;
   padding: 30px;
   border: 1px solid lightgrey;
   border-radius: 4px;

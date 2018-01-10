@@ -28,8 +28,10 @@ class BookSearchBar extends React.Component {
     if (this.state.search !== "") {
       this.props.searchBooks({ search: this.state.search }).then( (results) => {
         this.buildResults(results);
+        $("#book-search-results").removeClass("hidden-results");
       });
     } else {
+      $("#book-search-results").addClass("hidden-results");
       this.setState({searchResults: []});
     }
   }
@@ -37,8 +39,8 @@ class BookSearchBar extends React.Component {
   render() {
     return(
       <div id="book-search-container">
-        <input type="text" id="book-search-bar" onChange={ this.handleSearch }/>
-        <ul id="book-search-results">
+        <input type="text" id="book-search-bar" placeholder="Search Title or Author" onChange={ this.handleSearch } />
+        <ul id="book-search-results" className="hidden-results">
           { this.state.searchResults }
         </ul>
       </div>
