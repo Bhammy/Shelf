@@ -10,7 +10,7 @@ const Auth = ({component: Component, path, loggedIn, currentUser, exact}) => {
       if (!loggedIn) {
         return <Component {...props}/>
       } else {
-        return <Redirect to={`/users/${currentUser.id}`} />
+        return <Redirect to={`/users/${currentUser.id}/bookshelves/`} />
       }
     }
   }/>

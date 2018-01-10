@@ -7,11 +7,18 @@
 
 .books-table td {
   padding: 6px;
+  min-width: 140px;
+  text-align: center;
 }
 
 .book-row {
   font-size: 12px;
   border-bottom: 1px solid lightgrey;
+}
+
+.book-row:hover {
+  background-color: lightgrey;
+  transition: all 1s;
 }
 
 .books-headers th {

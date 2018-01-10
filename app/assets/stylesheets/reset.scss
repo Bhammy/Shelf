@@ -47,8 +47,8 @@ a:hover {
 
 .main-content {
   padding: 0px 0px;
-  min-width: 950px;
-  max-width: 1100px;
+  min-width: 1000px;
+  max-width: 1200px;
   min-height: 200px;
   margin: auto;
   overflow: visible;
@@ -88,12 +88,12 @@ a:hover {
 }
 
 .main-content-left-inner {
-  border-radius: 0 100px 0 0;
+  border-radius: 0 150px 0 0;
 
 }
 
 .main-content-right-inner {
-  border-radius: 100px 0 0 0;
+  border-radius: 150px 0 0 0;
 }
 
 button {
