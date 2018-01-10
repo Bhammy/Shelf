@@ -9,6 +9,11 @@ class BookItemDetail extends React.Component {
     super(props);
     this.book = this.props.book;
     this.showActions = this.showActions.bind(this);
+    this.state = { justRated: false };
+    this.ratingSet = this.ratingSet.bind(this);
+  }
+
+  componentWillReceiveProps(newProps) {
   }
 
   showActions () {
@@ -30,6 +35,10 @@ class BookItemDetail extends React.Component {
     }
   }
 
+  ratingSet () {
+    this.setState({ justRated: true });
+  }
+
   render() {
     return (
       <tr className="book-row">
@@ -39,7 +48,7 @@ class BookItemDetail extends React.Component {
           <i>{ this.book.author }</i>
         </td>
         <td> { this.calcAvgReview(this.book.reviews) } </td>
-        <td> <ReviewRatingContainer bookId={ this.book.id }/> </td>
+        <td> <ReviewRatingContainer bookId={ this.book.id } ratingSet={ this.ratingSet }/> </td>
         <td>{ this.book.description.slice(0, 80)+"..." }</td>
         <td> <BookshelfAddItemContainer bookshelves={ this.props.bookshelves } bookId={ this.book.id }/> </td>
       </tr>

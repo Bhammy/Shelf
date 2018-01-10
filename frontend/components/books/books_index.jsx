@@ -10,6 +10,7 @@ class BooksIndex extends React.Component {
     this.bookReviews = this.props.bookReviews;
     this.createBookModals = this.createBookModals.bind(this);
     this.createBookItems = this.createBookItems.bind(this);
+    this.closeActions = this.closeActions.bind(this);
   }
 
   componentDidMount() {
@@ -39,9 +40,15 @@ class BooksIndex extends React.Component {
   createBookModals(books) {
     this.bookModals = books.map( (book) => {
       return (
-        <Route exact path={`/books/${book.id}`} key={ book.id } component={() => <BookModalContainer bookId={ book.id } /> } />
+        <Route exact path={`/books/${book.id}`}
+          key={ book.id }
+          component={() => <BookModalContainer bookId={ book.id } freezeScroll={ this.freezeScroll } /> } />
       );
     });
+  }
+
+  closeActions() {
+    this.props.history.goBack();
   }
 
   createBookItems(books) {
@@ -54,6 +61,7 @@ class BooksIndex extends React.Component {
           currentUserId={ this.props.currentUser.id }
           updateReview={ this.props.updateReview }
           postReview={ this.props.postReview }
+          requestBook={ this.props.requestBook }
         />
       );
     });
@@ -64,7 +72,7 @@ class BooksIndex extends React.Component {
     return (
       <section className="books-index">
         { this.bookModals }
-        <Route path="/books/:bookId" render={ () => <div className="modal-screen"></div>} />
+        <Route path="/books/:bookId" render={ () => <div className="modal-screen" onClick={ this.closeActions }></div>} />
         <table className="books-table">
           <tbody>
             <tr className="books-headers">

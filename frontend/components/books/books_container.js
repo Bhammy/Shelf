@@ -3,7 +3,7 @@ import { requestBook, requestBooks } from '../../actions/book_actions';
 import { requestBookshelves } from '../../actions/bookshelf_actions';
 import { postReview, updateReview } from '../../actions/review_actions';
 import { selectUserReviews } from '../../reducers/selectors';
-import { withRouter } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import BooksIndex from './books_index';
 
 const mapStateToProps = (state, ownProps) => ({

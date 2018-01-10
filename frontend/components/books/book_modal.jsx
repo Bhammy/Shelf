@@ -51,9 +51,14 @@ class BookModal extends React.Component {
     return(<ReviewRatingImage rating={ rating } />)
   }
 
+  noScroll(e) {
+    console.log("firing from modal");
+    e.stopPropagation();
+  }
+
   render () {
     return(
-      <div id={`modal-${this.book.id}`} className="book-modal hidden">
+      <div id={`modal-${this.book.id}`} className="book-modal hidden" onScroll={ this.freezeScroll, this.noScroll }>
         <content className="book-modal-content">
           <section className="book-modal-image">
             <img src={ this.book.image_url } />

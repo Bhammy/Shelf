@@ -18,7 +18,9 @@ class ReviewRating extends React.Component {
 
   setRating (e) {
     let val = parseFloat(e.target.value);
-    this.setState({ rating: val }, () => this.action(this.state));
+    this.setState({ rating: val }, () => {
+      this.action(this.state).then( () => this.props.ratingSet() );
+    });
   }
 
   render() {
