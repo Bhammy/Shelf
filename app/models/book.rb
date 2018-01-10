@@ -29,7 +29,7 @@ class Book < ApplicationRecord
     source: :shelf
 
   def self.title_search(search)
-    self.where('title LIKE ?', "%#{search}%")
+    self.where('LOWER(title) LIKE LOWER(?)', "%#{search}%")
   end
 
 
