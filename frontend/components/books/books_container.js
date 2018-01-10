@@ -3,6 +3,7 @@ import { requestBook, requestBooks } from '../../actions/book_actions';
 import { requestBookshelves } from '../../actions/bookshelf_actions';
 import { postReview, updateReview } from '../../actions/review_actions';
 import { selectUserReviews } from '../../reducers/selectors';
+import { withRouter } from 'react-redux';
 import BooksIndex from './books_index';
 
 const mapStateToProps = (state, ownProps) => ({
@@ -20,4 +21,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   postReview: (review) => dispatch(postReview(review)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(BooksIndex);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(BooksIndex));

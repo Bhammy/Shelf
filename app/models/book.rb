@@ -28,4 +28,9 @@ class Book < ApplicationRecord
     through: :shelf_memberships,
     source: :shelf
 
+  def self.title_search(search)
+    self.where('title LIKE ?', "%#{search}%")
+  end
+
+
 end

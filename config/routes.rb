@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     resources :books, only: [:index, :show] do
       resource :shelf_membership, only: [:create, :destroy]
       resource :reviews, only: [:create, :update, :destroy]
+      get 'search', on: :collection
     end
     resources :bookshelves, except: [:new, :edit, :index]
   end

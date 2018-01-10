@@ -11,3 +11,13 @@ export const fetchBook = (bookId) => (
     url: `api/books/${bookId}`
   })
 );
+
+export const searchBooks = (book) => (
+  $.ajax({
+    method: "GET",
+    url: `api/books/search`,
+    data: {
+      book
+    }
+  })
+);
