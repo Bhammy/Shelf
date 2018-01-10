@@ -29,12 +29,12 @@
 .book-row img {
   max-height: 150px;
   width: auto;
+  box-shadow: 3px 3px 3px lightgrey;
   transition: transform 1.5s, box-shadow 1s;
   transition-timing-function: ease-out;
 }
 
 .books-table img:hover {
-  box-shadow: 3px 3px 3px lightgrey;
   transform: scale(1.1, 1.1);
   cursor: pointer;
 }
@@ -95,10 +95,12 @@ div [id^='modal-'] {
 }
 
 .checkbox-dropdown-clicker {
-  border: 1px solid lightgrey;
+  border: 1px solid darkgrey;
+  box-shadow: 2px 2px 2px lightgrey;
   border-radius: 4px;
   border-right: none;
   padding: 6px 0px 6px 6px;
+  background-color: #F9F7F4;
 }
 
 .checkbox-dropdown-clicker button {

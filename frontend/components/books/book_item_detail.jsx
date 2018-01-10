@@ -34,8 +34,10 @@ class BookItemDetail extends React.Component {
     return (
       <tr className="book-row">
         <td><img src={ this.book.image_url } onClick={ this.showActions }/></td>
-        <td><a onClick= { this.showActions }>{ this.book.title }</a></td>
-        <td>{ this.book.author }</td>
+        <td><a onClick= { this.showActions }>
+          <h3 className="data-row-title">{ this.book.title }</h3></a>
+          <i>{ this.book.author }</i>
+        </td>
         <td> { this.calcAvgReview(this.book.reviews) } </td>
         <td> <ReviewRatingContainer bookId={ this.book.id }/> </td>
         <td>{ this.book.description.slice(0, 80)+"..." }</td>

@@ -1,0 +1,15 @@
+.book-search-container {
+  display: flex;
+  justify-content: center;
+}
+
+#book-search-bar {
+  background-image: image_url('magnifying-glass.png');
+  background-position: 3px 3px;
+  background-repeat: no-repeat;
+  width: 400px;
+  margin: 10px;
+  padding: 8px;
+  padding-left: 30px;
+  border-radius: 4px;
+}

@@ -71,8 +71,7 @@ class BooksIndex extends React.Component {
           <tbody>
             <tr className="books-headers">
               <th>Cover</th>
-              <th>Title</th>
-              <th>Author</th>
+              <th>Title/Author</th>
               <th>Avg Rating</th>
               <th>User Rating</th>
               <th>Description</th>
