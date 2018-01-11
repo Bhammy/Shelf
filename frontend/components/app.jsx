@@ -18,6 +18,7 @@ const App = () => {
     <div className="app-container">
       <nav>
         <AuthRoute exact path="/" component={ LoginContainer } />
+        <ProtectedRoute path="/" component={ BookSearchContainer } />
         <ProtectedRoute path="/" component={ NavContainer } />
       </nav>
       <section className="main-content-container">
@@ -27,7 +28,6 @@ const App = () => {
         </div>
         <section className= "main-content" >
           <Route path="/" component={ ErrorsContainer } />
-          <ProtectedRoute path="/books" component={ BookSearchContainer } />
           <ProtectedRoute path="/books" component={ BooksContainer } />
           <ProtectedRoute path="/users/:userId/bookshelves" component={ BookshelfContainer } />
           <AuthRoute exact path="/" component={ SignupContainer } />

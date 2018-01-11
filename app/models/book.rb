@@ -36,10 +36,10 @@ class Book < ApplicationRecord
     through: :taggings
 
   def self.title_search(search)
-    self.where('LOWER(title) LIKE LOWER(?)
-      OR LOWER(author) LIKE LOWER(?)',
-      "%#{search}%",
-      "%#{search}%")
+    self.joins(:tags).where('LOWER(title) LIKE LOWER(?)
+      OR LOWER(author) LIKE LOWER(?)
+      OR LOWER(tags.name) LIKE LOWER(?)',
+      "%#{search}%", "%#{search}%", "%#{search}%")
   end
 
   def tag_names=(tag_names)

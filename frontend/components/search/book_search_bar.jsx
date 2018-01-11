@@ -39,7 +39,7 @@ class BookSearchBar extends React.Component {
   render() {
     return(
       <div id="book-search-container">
-        <input type="text" id="book-search-bar" placeholder="Search Title or Author" onChange={ this.handleSearch } />
+        <input type="text" id="book-search-bar" placeholder="Search Genre/Tag, Title or Author" onChange={ this.handleSearch } />
         <ul id="book-search-results" className="hidden-results">
           { this.state.searchResults }
         </ul>

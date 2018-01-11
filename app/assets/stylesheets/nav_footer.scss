@@ -20,7 +20,6 @@ nav {
   position: -webkit-sticky;
   top: 0;
   z-index: 10;
-  // background: linear-gradient(#F4F2E9, #F9F7F4);
 }
 
 .nav-links {
@@ -28,6 +27,10 @@ nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.nav-links li {
+  padding: 20px 20px;
 }
 
 .right-nav {
@@ -58,10 +61,6 @@ footer {
 
 .footer-links li {
   padding: 10px 100px;
-}
-
-.nav-links li {
-  padding: 0px 20px;
 }
 
 #last-footer-link {

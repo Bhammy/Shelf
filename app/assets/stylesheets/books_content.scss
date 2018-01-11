@@ -16,6 +16,10 @@
   border-bottom: 1px solid lightgrey;
 }
 
+.book-row:last-child {
+  border-bottom: none;
+}
+
 .book-row:hover {
   background-color: lightgrey;
   transition: all 1s;
@@ -187,6 +191,7 @@ div [class^='checkbox-container-dropdown-']{
 }
 
 .remove-tag-button {
+  border-radius: 0px 4px 4px 0px;
   padding: 1px 5px;
   margin: -1px;
   margin-left: 4px;
