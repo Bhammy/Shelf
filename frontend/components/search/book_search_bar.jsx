@@ -18,9 +18,9 @@ class BookSearchBar extends React.Component {
   }
 
   buildResults(searchResults) {
-    let results = Object.values(searchResults).map( (book) => {
-      return <SearchResultLink book={ book } key={ `book-result-${book.id}` } />;
-    });
+    let results = Object.values(searchResults).map( (book, idx) => {
+        return <SearchResultLink book={ book } key={ `book-result-${book.id}` } />;
+      });
     this.setState({ searchResults: results });
   }
 

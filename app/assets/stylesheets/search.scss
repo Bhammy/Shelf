@@ -49,6 +49,9 @@
     }
     border-bottom: 1px solid lightgrey;
   }
+  li:last-child {
+    border-bottom: none;
+  }
 }
 
 .hidden-results {
