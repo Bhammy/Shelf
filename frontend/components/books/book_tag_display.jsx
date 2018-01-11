@@ -14,7 +14,7 @@ class BookTagDisplay extends React.Component {
     if (this.state.tags.length > 0) {
       return this.state.tags.map( (tag) => {
         return (
-          <div key={ tag.name } className="tag-label">{ tag.name }<button className="tag-button" onClick={ this.removeTag(tag) }>×</button></div>
+          <div key={ tag.name } className="tag-label"><span>{ tag.name }</span><button className="remove-tag-button" onClick={ this.removeTag(tag) }>×</button></div>
         );
       });
     } else {
@@ -56,13 +56,13 @@ class BookTagDisplay extends React.Component {
 
   render() {
     return(
-      <div className={`book-tags-${this.state.book.id}`} onSubmit={ this.addTag }>
+      <div className={`book-tags`} onSubmit={ this.addTag }>
         { this.bookTags() }
         <form className="add-tag-form">
           <label>
             <input type="text" placeholder="Add genre" onChange={ this.handleChange }/>
           </label>
-          <button>Add</button>
+          <button className="add-tag-button">Add</button>
         </form>
       </div>
     );

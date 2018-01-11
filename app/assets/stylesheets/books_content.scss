@@ -159,6 +159,43 @@ div [class^='checkbox-container-dropdown-']{
   }
 }
 
+.book-tags {
+  font-family: 'Roboto Mono', monospace;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.add-tag-form {
+  width: 100%;
+}
+
+.tag-label {
+  border: 1px solid lightgrey;
+  border-right: none;
+  padding: 0px;
+  margin: 2px;
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  box-shadow: 2px 2px 2px lightgrey;
+  span {
+    font-size: 12px;
+    margin-left: 4px;
+  }
+}
+
+.remove-tag-button {
+  padding: 1px 5px;
+  margin: -1px;
+  margin-left: 4px;
+  background-color: red;
+}
+
+.remove-tag-button:hover {
+  background-color: #e50408;
+}
+
 #more-books-button {
   width: 100%;
 }
