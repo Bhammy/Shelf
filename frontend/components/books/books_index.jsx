@@ -31,6 +31,10 @@ class BooksIndex extends React.Component {
     }
   }
 
+  componentDidUpdate() {
+    // this.createBookItems(this.props.books);
+  }
+
   equalBooks(oldProps, newProps) {
     for (var i = 0; i < oldProps.length; i++) {
       if (oldProps[i] !== newProps[i]) {
@@ -55,20 +59,21 @@ class BooksIndex extends React.Component {
   }
 
   createBookItems(books) {
-    this.bookItems = books.slice(0, this.state.showNumBooks).map( (book) => {
-      return(
-        <BookItemDetailContainer bookId={ book.id }
-          key={ book.id }
-          bookshelves={ this.props.bookshelves }
-          bookReview={ this.bookReviews[book.id] }
-        />
-      );
+    this.setState({ bookItems: books.slice(0, this.state.showNumBooks).map( (book) => {
+        return(
+          <BookItemDetailContainer bookId={ book.id }
+            key={ book.id }
+            bookshelves={ this.props.bookshelves }
+            bookReview={ this.bookReviews[book.id] }
+          />
+        );
+      })
     });
   }
 
   showMoreBooks(e) {
     e.preventDefault();
-    this.setState({ showNumBooks: this.state.showNumBooks += 5 }, () => this.createBookItems(this.props.books) );
+    this.setState({ showNumBooks: this.state.showNumBooks += 5 }, () => this.createBookItems(this.props.books));
   }
 
   render() {
@@ -89,7 +94,7 @@ class BooksIndex extends React.Component {
               <th>Description</th>
               <th>Add to Shelf</th>
             </tr>
-            { this.bookItems }
+            { this.state.bookItems }
           </tbody>
         </table>
         { moreBooksButton }

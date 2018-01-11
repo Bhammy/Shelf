@@ -13,7 +13,7 @@ class BookSearchBar extends React.Component {
   handleSearch(e) {
     this.setState({ search: e.target.value });
     if (this.state.search !== "") {
-      window.setTimeout(this.searchResults, 500);
+      window.setTimeout(this.searchResults, 200);
     }
   }
 
