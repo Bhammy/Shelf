@@ -1,5 +1,5 @@
 import { RECEIVE_BOOK, RECEIVE_BOOKS } from '../actions/book_actions';
-import { merge } from 'lodash';
+import merge from 'lodash/merge';
 
 const booksReducer = (state = {}, action) => {
   let newState;
@@ -7,8 +7,7 @@ const booksReducer = (state = {}, action) => {
     case RECEIVE_BOOKS:
       return action.books;
     case RECEIVE_BOOK:
-      newState = merge({}, state, { [action.book.id]: action.book });
-      return newState;
+      return merge({}, state, { [action.book.id]: action.book });
     default:
       return state;
   }

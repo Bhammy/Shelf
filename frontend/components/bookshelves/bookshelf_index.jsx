@@ -41,7 +41,7 @@ class BookshelfIndex extends React.Component {
           </section>
           <section className="bookshelf-index">
             <ul className="bookshelf-list">
-              { this.props.bookshelves.map( (bookshelf) => (<BookshelfListItem bookshelf={ bookshelf } userId= {this.props.currentUser.id} key={ bookshelf.id} />) )}
+              { this.props.bookshelves.map( (bookshelf) => (<BookshelfListItem bookshelf={ bookshelf } userId= {this.props.currentUser.id} key={ bookshelf.id } />) )}
             </ul>
           </section>
           <section className="bookshelf-display">

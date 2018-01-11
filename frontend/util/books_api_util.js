@@ -21,3 +21,13 @@ export const searchBooks = (book) => (
     }
   })
 );
+
+export const updateBook = (book) => (
+  $.ajax({
+    method: "PATCH",
+    url: `api/books/${book.id}`,
+    data: {
+      book
+    }
+  })
+);

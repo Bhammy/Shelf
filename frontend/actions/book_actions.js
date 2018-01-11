@@ -30,3 +30,11 @@ export const requestBooks = () => (dispatch) => {
     return dispatch(receiveErrors(errs));
   });
 };
+
+export const updateBook = (book) => (dispatch) => {
+  return BookAPIUtil.updateBook(book).then( (book) => {
+    return dispatch(receiveBook(book));
+  }, (errs) => {
+    return dispatch(receiveErrors(errs));
+  });
+};

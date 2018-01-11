@@ -54,10 +54,6 @@ class BooksIndex extends React.Component {
     });
   }
 
-  closeActions() {
-    this.props.history.goBack();
-  }
-
   createBookItems(books) {
     this.setState({ bookItems: books.slice(0, this.state.showNumBooks).map( (book) => {
         return(
@@ -69,6 +65,10 @@ class BooksIndex extends React.Component {
         );
       })
     });
+  }
+
+  closeActions() {
+    this.props.history.goBack();
   }
 
   showMoreBooks(e) {

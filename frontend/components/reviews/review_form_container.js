@@ -17,7 +17,6 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   postReview: (review) => dispatch(postReview(review)),
   updateReview: (review) => dispatch(updateReview(review)),
   requestBook: (bookId) => dispatch(requestBook(bookId)),
-  reviewSubmitted: () => ownProps.reviewSubmitted(),
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ReviewForm));

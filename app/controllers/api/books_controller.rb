@@ -1,12 +1,16 @@
 class Api::BooksController < ApplicationController
 
   def index
-    @books = Book.all.order(updated_at: :desc)
+    @books = Book.includes(:tags).all.order(updated_at: :desc)
   end
 
   def update
     @book = Book.find(params[:id])
+    if book_params[:tag_names].nil?
+      @book.tag_names = [];
+    end
     if @book.update(book_params)
+      @book = Book.find(params[:id])
       render :show
     else
       render json: @book.errors.full_messages, status: 422

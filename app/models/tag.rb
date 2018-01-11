@@ -9,8 +9,9 @@
 #
 
 class Tag < ApplicationRecord
+  validates :name, uniqueness: true
+
   has_many :taggings, dependent: :destroy, inverse_of: :tag
   has_many :books, through: :taggings
 
-  
 end
