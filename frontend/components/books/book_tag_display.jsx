@@ -45,6 +45,7 @@ class BookTagDisplay extends React.Component {
 
   addTag(e) {
     e.preventDefault();
+    this.setState({ newTag: null });
     let newBook = this.state.book;
     newBook.tag_names = (newBook.tags.map( (stateTag) => stateTag.name).concat([ this.state.newTag ]));
     this.props.updateBook(newBook);
@@ -60,7 +61,7 @@ class BookTagDisplay extends React.Component {
         { this.bookTags() }
         <form className="add-tag-form">
           <label>
-            <input type="text" placeholder="Add genre" onChange={ this.handleChange }/>
+            <input type="text" placeholder="Add genre or tag" onChange={ this.handleChange }/>
           </label>
           <button className="add-tag-button">Add</button>
         </form>
