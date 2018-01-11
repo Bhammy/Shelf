@@ -10,7 +10,7 @@
 #
 
 class ShelfMembership < ApplicationRecord
-  validates :shelf_id, :book_id, presence: true
+  validates :shelf, :book, presence: true
   validates_uniqueness_of :book_id, scope: :shelf_id
 
   belongs_to :shelf,

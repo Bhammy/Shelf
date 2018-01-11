@@ -28,11 +28,24 @@ class Book < ApplicationRecord
     through: :shelf_memberships,
     source: :shelf
 
+  has_many :taggings,
+    dependent: :destroy,
+    inverse_of: :book
+
+  has_many :tags,
+    through: :taggings
+
   def self.title_search(search)
     self.where('LOWER(title) LIKE LOWER(?)
       OR LOWER(author) LIKE LOWER(?)',
       "%#{search}%",
       "%#{search}%")
+  end
+
+  def tag_names=(tag_names)
+    self.tags = tag_names.map do |tag_name|
+      Tag.find_or_create_by(name: tag_name)
+    end
   end
 
 

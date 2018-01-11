@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       resources :bookshelves, only: [:index, :show]
     end
     resource :session, only: [:create, :destroy]
-    resources :books, only: [:index, :show] do
+    resources :books, only: [:index, :show, :update] do
       resource :shelf_membership, only: [:create, :destroy]
       resource :reviews, only: [:create, :update, :destroy]
       get 'search', on: :collection
