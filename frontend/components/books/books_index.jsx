@@ -11,6 +11,8 @@ class BooksIndex extends React.Component {
     this.createBookModals = this.createBookModals.bind(this);
     this.createBookItems = this.createBookItems.bind(this);
     this.closeActions = this.closeActions.bind(this);
+    this.showMoreBooks = this.showMoreBooks.bind(this);
+    this.state = { showNumBooks: 5 };
   }
 
   componentDidMount() {
@@ -53,7 +55,7 @@ class BooksIndex extends React.Component {
   }
 
   createBookItems(books) {
-    this.bookItems = books.map( (book) => {
+    this.bookItems = books.slice(0, this.state.showNumBooks).map( (book) => {
       return(
         <BookItemDetailContainer bookId={ book.id }
           key={ book.id }
@@ -64,7 +66,14 @@ class BooksIndex extends React.Component {
     });
   }
 
+  showMoreBooks(e) {
+    e.preventDefault();
+    this.setState({ showNumBooks: this.state.showNumBooks += 5 }, () => this.createBookItems(this.props.books) );
+  }
+
   render() {
+
+    let moreBooksButton = <button id="more-books-button" type="button" onClick={ this.showMoreBooks }> Show More Books </button>;
 
     return (
       <section className="books-index">
@@ -83,6 +92,7 @@ class BooksIndex extends React.Component {
             { this.bookItems }
           </tbody>
         </table>
+        { moreBooksButton }
       </section>
     );
   }
