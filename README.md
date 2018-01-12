@@ -10,6 +10,7 @@ Shelf is a book rating and review web application designed with users in mind; i
 
 [Feature-details] Features
   * Books
+    * Book features
   * Bookshelves
   * Reviews
   * Search
