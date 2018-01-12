@@ -1,4 +1,5 @@
 import React from 'react';
+import Typed from 'typed.js';
 
 class SessionForm extends React.Component {
 
@@ -24,7 +25,9 @@ class SessionForm extends React.Component {
 
   demoLoginSubmit(e) {
     e.preventDefault();
-    this.props.action(this.demoLogin);
+    let username = new Typed('#login-input', { strings: ["username"], typeSpeed: 40});
+    let pw = new Typed('#login-pw', { strings: ["starwars"], typeSpeed: 40});
+    setTimeout(() => { this.props.action(this.demoLogin); }, 800);
   }
 
   render() {
@@ -46,10 +49,10 @@ class SessionForm extends React.Component {
         <form onSubmit={ this.handleSubmit }>
           { this.props.formType === "signup" ? greet : null }
           <label>Username:
-            <input type="text" value={ this.state.username } onChange={ this.handleChange("username") }/>
+            <input type="text" value={ this.state.username } id={ this.props.formType === "login" ? "login-input" : null } onChange={ this.handleChange("username") }/>
           </label>
           <label>Password:
-            <input type="password" value={ this.state.password } onChange={ this.handleChange("password") }/>
+            <input type="password" value={ this.state.password } id={ this.props.formType === "login" ? "login-pw" : null } onChange={ this.handleChange("password") }/>
           </label>
           <button>{ ( this.props.formType === "login" ) ? "Login" : "Sign Up" }</button>
           { demoLoginButton }
