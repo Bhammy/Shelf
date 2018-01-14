@@ -14,6 +14,7 @@ class NavLinks extends React.Component {
           <h1><Link to={`/users/${this.props.currentUser.id}/bookshelves`}> ]shelf[ </Link></h1>
         </div>
         <div className="right-nav">
+          <li><Link to={`/users/${this.props.currentUser.id}`}>User Profile</Link></li>
           <li><Link to={"/books"}>Browse Books</Link></li>
           <li><Link to={`/users/${this.props.currentUser.id}/bookshelves`}> My Shelves </Link></li>
           <li><button onClick={ this.props.logout }> Logout </button></li>

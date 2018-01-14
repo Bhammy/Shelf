@@ -6,8 +6,9 @@ import NavContainer from './nav/nav_container';
 import BooksContainer from './books/books_container';
 import BookshelfContainer from './bookshelves/bookshelves_container';
 import BookSearchContainer from './search/book_search_container';
+import UserShowContainer from './users/user_show_container';
 import Footer from './footer/footer';
-import { Route, Link } from 'react-router-dom';
+import { Route, Link, Switch } from 'react-router-dom';
 import { ProtectedRoute, AuthRoute } from '../util/route_util';
 
 //primarily for rendering routes
@@ -29,7 +30,10 @@ const App = () => {
         <section className= "main-content" >
           <Route path="/" component={ ErrorsContainer } />
           <ProtectedRoute path="/books" component={ BooksContainer } />
-          <ProtectedRoute path="/users/:userId/bookshelves" component={ BookshelfContainer } />
+          <Switch>
+            <ProtectedRoute exact path="/users/:userId/bookshelves" component={ BookshelfContainer } />
+            <ProtectedRoute exact path="/users/:userId" component={ UserShowContainer } />
+          </Switch>
           <AuthRoute exact path="/" component={ SignupContainer } />
         </section>
         <div className="main-content-right">
