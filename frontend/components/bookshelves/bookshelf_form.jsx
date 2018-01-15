@@ -27,9 +27,8 @@ class BookshelfForm extends React.Component {
 
   deleteShelf(e) {
     e.preventDefault();
-    this.props.deleteBookshelf(this.props.match.params.id).then( (success) => {
-      this.props.history.push(`/users/${success.user_id}/bookshelves/`);
-    });
+    this.props.history.push(`/users/${this.props.currentUser.id}/bookshelves/`);
+    this.props.deleteBookshelf(this.props.match.params.id);
   }
 
   render () {

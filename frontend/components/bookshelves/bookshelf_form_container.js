@@ -7,11 +7,13 @@ const mapStateToProps = (state, ownProps) => {
   if (ownProps.match.params.id) {
     return {
       bookshelf: state.entities.bookshelves[ownProps.match.params.id],
+      currentUser: state.session.currentUser,
       formType: "edit",
     };
   } else {
     return {
       bookshelf: { shelf_title: "", user_id: ownProps.match.params.userId },
+      currentUser: state.session.currentUser,
       formType: "create",
     };
   }

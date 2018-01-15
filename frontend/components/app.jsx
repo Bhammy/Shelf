@@ -31,7 +31,7 @@ const App = () => {
           <Route path="/" component={ ErrorsContainer } />
           <ProtectedRoute path="/books" component={ BooksContainer } />
           <Switch>
-            <ProtectedRoute exact path="/users/:userId/bookshelves" component={ BookshelfContainer } />
+            <ProtectedRoute path="/users/:userId/bookshelves" component={ BookshelfContainer } />
             <ProtectedRoute exact path="/users/:userId" component={ UserShowContainer } />
           </Switch>
           <AuthRoute exact path="/" component={ SignupContainer } />

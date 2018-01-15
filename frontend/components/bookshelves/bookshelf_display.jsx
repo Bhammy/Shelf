@@ -19,6 +19,8 @@ class BookshelfDisplay extends React.Component {
 
     if (this.props.match.params.id === "new") {
       bookItems = null;
+    } else if (!this.props.bookshelf) {
+      bookItems = null;
     } else {
       bookItems = this.props.bookshelf.books.map( (book, idx) => (
         <BookItemDetailContainer
