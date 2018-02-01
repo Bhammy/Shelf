@@ -10,3 +10,14 @@
 .user-show-main {
   width: 80%;
 }
+
+.user-show-activity-list li {
+  padding: 10px;
+  // border-bottom: 1px solid darkgrey;
+  box-shadow: 0px 20px 0px -19px darkgrey;
+}
+
+.user-show-activity-list li:last-child {
+  // border-bottom: none;
+  box-shadow: none;
+}

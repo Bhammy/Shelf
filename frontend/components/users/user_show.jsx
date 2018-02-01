@@ -30,7 +30,7 @@ class UserShow extends React.Component {
         <section className="user-show-main">
           <h2>Recent Activity</h2>
           <hr />
-          <ul>
+          <ul class="user-show-activity-list">
             <ActivityList reviews={ this.state.userReviews} />
           </ul>
         </section>
