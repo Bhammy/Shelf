@@ -20,7 +20,8 @@ input[type="radio"]:focus {
 .review-form-rating {
   display: flex;
   flex-direction: row-reverse;
-  justify-content: flex-end;
+  justify-content: center;
+  width: 125px;
 }
 
 label[class^='rating-img-'] {
@@ -36,15 +37,15 @@ input[id^='rating-input']:checked ~ label[class^='rating-img-'] {
   background-image: image_url('library_24.png');
 }
 
-.review-form-rating:hover label[class^='rating-img-']:hover,
-.review-form-rating:hover label[class^='rating-img-']:hover ~ label[class^='rating-img-'],
+label[class^='rating-img-']:hover,
+label[class^='rating-img-']:hover ~ label[class^='rating-img-'],
 input[id^='rating-input']:checked ~ label[class^='rating-img-'] {
   background-image: image_url('library_24.png');
   cursor: pointer;
 }
 
-.review-form-rating label[class^='rating-img-'],
-.review-form-rating label[class^='rating-img-']:hover {
+label[class^='rating-img-'],
+label[class^='rating-img-']:hover label[class^='rating-img-'] {
   background-image: image_url('library_bw_24.png');
   cursor: pointer;
 }
